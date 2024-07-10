@@ -1,0 +1,7 @@
+pytorch >= 1.12
+torchvision >= 0.13
+tensorboard >= 2.0
+jupyter >= 1.0
+pyyaml >= 5.0
+matplotlib >= 3.3
+tqdm >= 4.55

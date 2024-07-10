@@ -1,0 +1,70 @@
+********** SOLUTION **********
+Precision:1.00 Recall:1.00 TP:5 FN:0 TN:5 FP:0 Size:20
+max(V0,V1):- tail(V0,V2),empty(V2),head(V0,V1).
+max(V0,V1):- head(V0,V1),tail(V0,V2),tail(V2,V3),head(V3,V4),greater(V1,V4).
+max(V0,V1):- tail(V0,V3),tail(V3,V2),head(V2,V1),tail(V2,V4),head(V4,V5),greater(V1,V5).
+max(V0,V1):- tail(V0,V2),max(V2,V1).
+******************************
+Num. programs: 1429
+Generate:
+	Called: 1442 times 	 Total: 45.78 	 Mean: 0.0317 	 Max: 15.744 	 Percentage: 92%
+Constrain:
+	Called: 1429 times 	 Total: 1.58 	 Mean: 0.0011 	 Max: 0.061 	 Percentage: 3%
+Find Mucs:
+	Called: 423 times 	 Total: 1.25 	 Mean: 0.0030 	 Max: 0.101 	 Percentage: 2%
+Init:
+	Called: 14 times 	 Total: 0.63 	 Mean: 0.0447 	 Max: 0.159 	 Percentage: 1%
+Test:
+	Called: 1429 times 	 Total: 0.29 	 Mean: 0.0002 	 Max: 0.000 	 Percentage: 0%
+Combine:
+	Called: 4 times 	 Total: 0.01 	 Mean: 0.0033 	 Max: 0.007 	 Percentage: 0%
+Check Subsumed And Covers_Too_Few:
+	Called: 1000 times 	 Total: 0.01 	 Mean: 0.0000 	 Max: 0.000 	 Percentage: 0%
+Load Data:
+	Called: 1 times 	 Total: 0.00 	 Mean: 0.0049 	 Max: 0.005 	 Percentage: 0%
+Prune Backtrack Subsumed:
+	Called: 5 times 	 Total: 0.00 	 Mean: 0.0002 	 Max: 0.000 	 Percentage: 0%
+Total operation time: 49.55s
+Total execution time: 49.61s
+
+
+STDERR:
+18:44:03 Generating programs of size: 2
+18:44:03 Generating programs of size: 3
+18:44:03 Generating programs of size: 4
+18:44:03 ********************
+18:44:03 New best hypothesis:
+18:44:03 tp:1 fn:4 tn:5 fp:0 size:4
+18:44:03 max(V0,V1):- tail(V0,V2),empty(V2),head(V0,V1).
+18:44:03 ********************
+18:44:03 Generating programs of size: 5
+18:44:03 ********************
+18:44:03 New best hypothesis:
+18:44:03 tp:3 fn:2 tn:5 fp:0 size:9
+18:44:03 max(V0,V1):- tail(V0,V2),empty(V2),head(V0,V1).
+18:44:03 max(V0,V1):- tail(V0,V3),tail(V3,V4),tail(V4,V2),head(V2,V1).
+18:44:03 ********************
+18:44:03 Generating programs of size: 6
+18:44:03 ********************
+18:44:03 New best hypothesis:
+18:44:03 tp:4 fn:1 tn:5 fp:0 size:15
+18:44:03 max(V0,V1):- tail(V0,V2),empty(V2),head(V0,V1).
+18:44:03 max(V0,V1):- tail(V0,V3),tail(V3,V4),tail(V4,V2),head(V2,V1).
+18:44:03 max(V0,V1):- head(V0,V1),tail(V0,V2),tail(V2,V3),head(V3,V4),greater(V1,V4).
+18:44:03 ********************
+18:44:03 Generating programs of size: 7
+18:44:03 ********************
+18:44:03 New best hypothesis:
+18:44:03 tp:5 fn:0 tn:5 fp:0 size:20
+18:44:03 max(V0,V1):- tail(V0,V2),empty(V2),head(V0,V1).
+18:44:03 max(V0,V1):- head(V0,V1),tail(V0,V2),tail(V2,V3),head(V3,V4),greater(V1,V4).
+18:44:03 max(V0,V1):- tail(V0,V3),tail(V3,V2),head(V2,V1),tail(V2,V4),head(V4,V5),greater(V1,V5).
+18:44:03 max(V0,V1):- tail(V0,V2),max(V2,V1).
+18:44:03 ********************
+18:44:03 Generating programs of size: 8
+18:44:03 Generating programs of size: 9
+18:44:04 Generating programs of size: 10
+18:44:05 Generating programs of size: 11
+18:44:08 Generating programs of size: 12
+18:44:15 Generating programs of size: 13
+
