@@ -14,7 +14,7 @@ It is divided into the following semesters and courses. Each course contains dif
 - Assignment 2: Training the Fully Recurrent Network
 - Assignment 3: Text Processing with LSTM in PyTorch
 - Assignment 4: Training Transformers in PyTorch
-### Machine Learning - Supervised Learning**:
+### Machine Learning - Supervised Learning:
 - Assignment 0: Introduction to Latex
 - Assignment 1: k-nearest neighbors
 - Assignment 2: Gaussian Classifier, Bias-Variance Decomposition, Evaluation Measures
@@ -61,7 +61,13 @@ It is divided into the following semesters and courses. Each course contains dif
 - Assignment 1: Recap Probability Theory
 - Assignment 2: Estimation Theory
 - Assignment 3: Probabilistic PCA
-- Assignment 4: Veriational Autoencoders
+- Assignment 4: Variational Autoencoders
 - Assignment 5: Statistical Learning Theory
 - Assignment 6: ODEs and SDEs
 - Assignment 7: Diffusion Models
+### Stochastic Simulation:
+- Exercise 1: Pseudo-random number generator "RANDU"
+- Exercise 2: Acceptance-rejection method and Box-Muller algorithm
+- Exercise 3: Markov chain
+- Exercise 4: Numerical Illustration of the Black-Scholes Model
+- Exercise 5: Monte Carlo Integration
