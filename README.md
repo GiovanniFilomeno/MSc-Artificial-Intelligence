@@ -27,7 +27,7 @@ It is divided into the following semesters and courses. Each course contains dif
 ### Planning and Reasoning:
 - Project 1:  SAT Encoding of a 3 x 3 Sliding Puzzle
 - Project 2: N-Queens Problem Encoding 
-### Reinforcement Learning**
+### Reinforcement Learning:
 - Assignment 0: Introduction
 - Assignment 1: k-Armed Bandit Problems
 - Assignment 2: Dynamic Programming
@@ -50,7 +50,7 @@ It is divided into the following semesters and courses. Each course contains dif
 ### Knowledge Representation:
 ### Machine Learning - Unsupervised Learning:
 - Assignment 1: Estimation Theory, Fisher Information, CRLB
-- Assignment 2: Maxcimum Likelihood
+- Assignment 2: Maximum Likelihood
 - Assignment 3: PCA
 - Assignment 4: PCA and Kernel PCA
 - Assignment 5: ICA
@@ -71,3 +71,6 @@ It is divided into the following semesters and courses. Each course contains dif
 - Exercise 3: Markov chain
 - Exercise 4: Numerical Illustration of the Black-Scholes Model
 - Exercise 5: Monte Carlo Integration
+
+## Third Semester:
+### Probabilistic Models:
