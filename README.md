@@ -76,7 +76,9 @@ It is divided into the following semesters and courses. Each course contains dif
 ### Probabilistic Models:
 - Assignment 1: Basic Concepts (Joint Distributions, Probabilistic Queries, Marginal Distributions, Inference by Enumeration, the Bayes Rule, the Chain Rule, Independence, and Conditional Independence)
 - Assignment 2: Approximate Inference
-### Computability and Complexity
+### Computability and Complexity:
 - Assignment 1:...
 - Assignment 2:...
-### Computer Vision
+### Computer Vision:
+- Assignment 1: Image Processing Basics
+- Assignment 2: Feature Extraction and Segmentation
