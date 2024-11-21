@@ -76,6 +76,7 @@ It is divided into the following semesters and courses. Each course contains dif
 ### Probabilistic Models:
 - Assignment 1: Basic Concepts (Joint Distributions, Probabilistic Queries, Marginal Distributions, Inference by Enumeration, the Bayes Rule, the Chain Rule, Independence, and Conditional Independence)
 - Assignment 2: Approximate Inference
+- Assignment 3: Gibbs Sampling & Parameter Learning
 ### Computability and Complexity:
 - Assignment 1:...
 - Assignment 2:...
