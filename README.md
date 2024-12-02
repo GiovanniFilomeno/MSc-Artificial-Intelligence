@@ -83,3 +83,4 @@ It is divided into the following semesters and courses. Each course contains dif
 ### Computer Vision:
 - Assignment 1: Image Processing Basics
 - Assignment 2: Feature Extraction and Segmentation
+- Assignment 3: Optical Flow, Object Tracking and Detection
