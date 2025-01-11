@@ -78,6 +78,7 @@ It is divided into the following semesters and courses. Each course contains dif
 - Assignment 2: Approximate Inference
 - Assignment 3: Gibbs Sampling & Parameter Learning
 - Assignment 4: Structure Learning
+- Assignment 5: Hidden Markov Models
 ### Computability and Complexity:
 - Assignment 1:...
 - Assignment 2:...
