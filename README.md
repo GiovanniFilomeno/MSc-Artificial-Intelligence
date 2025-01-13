@@ -81,6 +81,7 @@ It is divided into the following semesters and courses. Each course contains dif
 - Assignment 5: Hidden Markov Models
 ### Computability and Complexity:
 - Assignment 1:...
+- - Assignment 2: 
 - Assignment 2:...
 ### Computer Vision:
 - Assignment 1: Image Processing Basics
