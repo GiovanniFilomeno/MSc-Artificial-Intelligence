@@ -85,4 +85,4 @@ It is divided into the following semesters and courses. Each course contains dif
 - Assignment 1: Image Processing Basics
 - Assignment 2: Feature Extraction and Segmentation
 - Assignment 3: Optical Flow, Object Tracking and Detection
-- Assignment 4: ...
+- Assignment 4: 3D Reconstruction
