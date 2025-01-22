@@ -80,7 +80,7 @@ It is divided into the following semesters and courses. Each course contains dif
 - Assignment 4: Structure Learning
 - Assignment 5: Hidden Markov Models
 ### Computability and Complexity:
-- Report: ...
+- Report: Proving NP-Completeness of the Battleship Decision Problem via Karp Reduction
 ### Computer Vision:
 - Assignment 1: Image Processing Basics
 - Assignment 2: Feature Extraction and Segmentation
