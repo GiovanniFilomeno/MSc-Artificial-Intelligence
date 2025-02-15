@@ -88,3 +88,8 @@ It is divided into the following semesters and courses. Each course contains dif
 - Assignment 4: 3D Reconstruction
 
 ## Fourth Semester:
+### Computer Algebra for Concrete Mathematics 
+### Learning from User-generated Data
+### Machine Learning and Pattern Classification
+### Numerical Analysis and Optimization
+### Programming in Python II
