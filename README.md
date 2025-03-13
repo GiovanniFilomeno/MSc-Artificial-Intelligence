@@ -86,3 +86,11 @@ It is divided into the following semesters and courses. Each course contains dif
 - Assignment 2: Feature Extraction and Segmentation
 - Assignment 3: Optical Flow, Object Tracking and Detection
 - Assignment 4: 3D Reconstruction
+
+## Fourth Semester:
+### Statistics for AI:
+- Assignment 1: Basics definition, attributes, measurements
+### Learning from User-generated Data
+### Machine Learning and Pattern Classification
+### Numerical Analysis and Optimization
+### Programming in Python II
