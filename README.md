@@ -91,6 +91,7 @@ It is divided into the following semesters and courses. Each course contains dif
 ### Statistics for AI:
 - Assignment 1: Basics definition, attributes, measurements
 ### Learning from User-generated Data
+- Assignment 1: xxxx
 ### Machine Learning and Pattern Classification
 ### Numerical Analysis and Optimization
 ### Programming in Python II
