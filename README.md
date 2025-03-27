@@ -96,3 +96,4 @@ It is divided into the following semesters and courses. Each course contains dif
 ### Machine Learning and Pattern Classification
 ### Numerical Analysis and Optimization
 ### Programming in Python II
+- Assignment 1: Functions Advanced
