@@ -97,3 +97,6 @@ It is divided into the following semesters and courses. Each course contains dif
 ### Numerical Analysis and Optimization
 ### Programming in Python II
 - Assignment 1: Functions Advanced
+### SAT Programming: 
+- Exercise 1: Tseitin Transformation and Limboole
+- Exercise 2: BCP and DP methods
