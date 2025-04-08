@@ -93,11 +93,12 @@ It is divided into the following semesters and courses. Each course contains dif
 ### Learning from User-generated Data
 - Assignment 1: Interaction Matrix & POP recommender
 - Assignment 2: ItemKNN
-### Machine Learning and Pattern Classification
-### Numerical Analysis and Optimization
+### Machine Learning and Pattern Classification:
 ### Programming in Python II
 - Assignment 1: Functions Advanced
 - Assignment 2: Plotting
 ### SAT Programming: 
 - Exercise 1: Tseitin Transformation and Limboole
 - Exercise 2: BCP and DP methods
+### Artificial Intelligence in Life Science: 
+- Assignment 1: QSAR
