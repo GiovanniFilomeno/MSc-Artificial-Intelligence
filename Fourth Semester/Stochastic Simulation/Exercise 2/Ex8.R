@@ -12,20 +12,20 @@ rgamma_intshape_inv <- function(M, shape, rate = 1) {
   colSums(mat)
 }
 
-## ---------- parameters ----------
+# Exercise Parameters
 set.seed(2024)
 M  <- 1000
-n  <- 5          # shape
-lam <- 0.6       # rate  λ   (scale = 1/λ = 1.666...)
+n  <- 5          
+lam <- 0.6       
 
-## ---------- simulate ----------
+# Generating Points
 g <- rgamma_intshape_inv(M, shape = n, rate = lam)
 
-## ---------- true CDF and PDF ----------
+# Defining theoretical CDF and PDF
 Fgamma <- function(t) pgamma(t, shape = n, rate = lam)   # built-in pgamma
 fgamma <- function(t) dgamma(t, shape = n, rate = lam)
 
-## ---------- part b: ecdf vs true CDF ----------
+# Part B
 plot(ecdf(g), do.points = FALSE,
      main = bquote(Gamma(.(n),~lambda^{-1}==.(1/lam)):~ecdf~vs.~true~CDF),
      xlab = "x", ylab = "F(x)")
@@ -33,8 +33,8 @@ curve(Fgamma, from = 0, to = max(g), add = TRUE, lwd = 2)
 legend("bottomright", c("empirical CDF", "true CDF"),
        lty = c(1,1), lwd = c(1,2))
 
-## ---------- part c: empirical density vs true PDF ----------
-plot(density(g), main = "Empirical density vs. true Gamma pdf",
+# Part C
+plot(density(g), main = "Empirical density vs. true Gamma PDF",
      xlab = "x", ylab = "f(x)")
 curve(fgamma, from = 0, to = max(g), add = TRUE, lwd = 2)
 legend("topright", c("kernel density", "true pdf"),

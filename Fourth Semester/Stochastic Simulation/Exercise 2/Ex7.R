@@ -1,4 +1,4 @@
-set.seed(123)
+set.seed(2024)
 M     <- 1000
 alpha <- 2
 beta  <- 4
