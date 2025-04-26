@@ -14,6 +14,7 @@ simx <- function(M) {
   })
 }
 
+# Exercise Parameters
 set.seed(2024)
 M <- 1e4
 x <- simx(M)

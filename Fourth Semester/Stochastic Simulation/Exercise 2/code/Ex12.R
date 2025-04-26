@@ -9,6 +9,7 @@ rnorm_bm <- function(n) {
   c(z1, z2)                 
 }
 
+# Exercise Parameters
 set.seed(2024)
 n  <- 1e5
 X  <- rnorm_bm(n)

@@ -19,6 +19,7 @@ r_f <- function(M) {
   out
 }
 
+# Exercise Parameters
 set.seed(2024)
 M <- 1e5
 x <- r_f(M)
