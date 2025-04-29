@@ -93,6 +93,8 @@ It is divided into the following semesters and courses. Each course contains dif
 ### Learning from User-generated Data
 - Assignment 1: Interaction Matrix & POP recommender
 - Assignment 2: ItemKNN
+- Assignment 3: Matrix Factorization
+- Assignment 4: Evaluation (precision, recall, nDCG)
 ### Machine Learning and Pattern Classification:
 ### Programming in Python II
 - Assignment 1: Functions Advanced
