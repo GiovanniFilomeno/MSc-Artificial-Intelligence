@@ -68,11 +68,11 @@ def analyze_netflix(data_path: str | Path) -> pd.DataFrame:
         .reset_index(drop=True)
     )
 
-    # Print as stated in the exercise
-    print("-----------------------------------------")
-    print("Print check:")
-    print(counts)
-    print("-----------------------------------------")
+    # # Print as stated in the exercise
+    # print("-----------------------------------------")
+    # print("Print check:")
+    # print(counts)
+    # print("-----------------------------------------")
 
     # Keep top 3
     counts["rank"] = counts.groupby("continent")["count"].rank(

@@ -20,11 +20,11 @@ def analyze_titanic(data_path: str | Path) -> pd.DataFrame:
         .sort_index()              
     )
 
-    # Print as stated in the exercise
-    print("-----------------------------------------")
-    print("Print check:")
-    print(survival_rate)
-    print("-----------------------------------------")
+    # # Print as stated in the exercise
+    # print("-----------------------------------------")
+    # print("Print check:")
+    # print(survival_rate)
+    # print("-----------------------------------------")
 
     # Plot
     ax = survival_rate.plot(

@@ -34,11 +34,11 @@ def analyze_superstore(data_path: str | Path) -> pd.DataFrame:
         .sort_index()
     )
 
-    # Print as stated in the exercise
-    print("-----------------------------------------")
-    print("Print check:")
-    print(cat_sales)
-    print("-----------------------------------------")
+    # # Print as stated in the exercise
+    # print("-----------------------------------------")
+    # print("Print check:")
+    # print(cat_sales)
+    # print("-----------------------------------------")
 
     cat_sales.rename(columns={False: "No", True: "Yes"}, inplace=True) # renaming for the plot
     df["Order Date"] = pd.to_datetime(df["Order Date"])
