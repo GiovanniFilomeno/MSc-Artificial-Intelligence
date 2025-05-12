@@ -99,6 +99,7 @@ It is divided into the following semesters and courses. Each course contains dif
 ### Programming in Python II
 - Assignment 1: Functions Advanced
 - Assignment 2: Plotting
+- Assignment 3: Pandas
 ### SAT Programming: 
 - Exercise 1: Tseitin Transformation and Limboole
 - Exercise 2: BCP and DP methods
