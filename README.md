@@ -106,4 +106,5 @@ It is divided into the following semesters and courses. Each course contains dif
 - Exercise 1: Tseitin Transformation and Limboole
 - Exercise 2: BCP and DP methods
 ### Artificial Intelligence in Life Science: 
-- Assignment 1: QSAR
+- Assignment 1: QSAR - Drug Activity
+- Assignment 2: Molecular generator
