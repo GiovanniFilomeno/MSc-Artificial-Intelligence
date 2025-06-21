@@ -43,11 +43,10 @@ It is divided into the following semesters and courses. Each course contains dif
 - Assignment 5: Adversial Training
 - Assignment 6: Normalising Flows
 - Assignment 7: Bayesian Deep Learning
-### Deep Reinforcement Learning**:
+### Deep Reinforcement Learning:
 - Assignment 1: Imitation Learning
 - Assignment 2: Minigrid DQN-Training
 - Assignment 3: Policy Gradient PPO
-### Knowledge Representation:
 ### Machine Learning - Unsupervised Learning:
 - Assignment 1: Estimation Theory, Fisher Information, CRLB
 - Assignment 2: Maximum Likelihood
@@ -56,7 +55,6 @@ It is divided into the following semesters and courses. Each course contains dif
 - Assignment 5: ICA
 - Assignment 6: Factor Analysis
 - Assignment 7: Scaling and Projection Methods
-### Robopsycology:
 ### Theoretical Concepts in Machine Learning:
 - Assignment 1: Recap Probability Theory
 - Assignment 2: Estimation Theory
@@ -106,6 +104,10 @@ It is divided into the following semesters and courses. Each course contains dif
 ### SAT Programming: 
 - Exercise 1: Tseitin Transformation and Limboole
 - Exercise 2: BCP and DP methods
+- Project: SAT programming 3 solvers
 ### Artificial Intelligence in Life Science: 
 - Assignment 1: QSAR - Drug Activity
 - Assignment 2: Molecular generator
+- Assignment 3:
+### Stochastic Simulation:
+
