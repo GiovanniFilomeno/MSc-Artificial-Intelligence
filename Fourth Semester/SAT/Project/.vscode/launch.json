@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "/Users/Q540900/Desktop/A.I. Master/Fourth Semester/SAT/Project",
+      "program": "/Users/Q540900/Desktop/A.I. Master/Fourth Semester/SAT/Project/build/Debug/outDebug"
+    }
+  ]
+}

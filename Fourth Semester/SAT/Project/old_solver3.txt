@@ -1,0 +1,297 @@
+// // solver3_cdcl.cpp
+// #include "solver.hpp"
+// #include <deque>
+// #include <unordered_set>
+// #include <cmath>
+
+// class Solver3 : public Solver {
+// public:
+//     std::string name() const override { return "CDCL + learning"; }
+
+//     Result solve(const std::vector<Clause>& in, int n, Stats& st) override {
+//         conflicts_seen    = 0;
+//         decisions         = propagations = 0;
+//         next_restart_at   = 100;
+//         restart_factor    = 1.5;
+
+//         if (!build(in, n)) { st.millis = 0; return Result::UNSAT; }
+
+//         auto start = now();
+//         Result res = cdcl_search();
+//         st.millis  = elapsed(start);
+//         st.decisions     = decisions;
+//         st.propagations  = propagations;
+//         st.conflicts     = conflicts_seen;
+//         return res;
+//     }
+
+// private:
+//     /* ---------- data structures ---------- */
+//     struct WClause {
+//         std::vector<int> lit;
+//         int w1, w2;                         // indices into lit[]
+//     };
+
+//     std::vector<WClause>         cls;       // original + learned
+//     std::vector<std::vector<int>>watchlist; // lit-index → clause ids
+//     std::vector<int8_t>          val;       // 1=true, -1=false, 0=undef
+//     std::vector<int>             trail;     // assignment stack (literal sign)
+//     std::vector<int>             level_start;
+//     std::vector<int>             reason;    // var → clause id (-1=decision)
+
+//     /* VSIDS */
+//     std::vector<double>          activity;  // per variable
+//     double                       var_inc = 1.0, var_decay = 0.95;
+
+//     int                num_vars = 0;
+//     uint64_t           decisions = 0, propagations = 0, conflicts_seen = 0;
+
+//     /* restart policy */
+//     uint64_t           next_restart_at = 100;
+//     double             restart_factor  = 1.5;
+
+//     /* ---------- helpers ---------- */
+//     static int lit2idx(int lit, int n) { return lit > 0 ? lit : n - lit; }
+//     static int idx2lit(int idx, int n) { return idx <= n ? idx : n - idx; }
+
+//     static double elapsed(const std::chrono::steady_clock::time_point& s) {
+//         using namespace std::chrono;
+//         return duration<double, std::milli>(steady_clock::now() - s).count();
+//     }
+//     static std::chrono::steady_clock::time_point now() {
+//         return std::chrono::steady_clock::now();
+//     }
+
+//     /* ---------- building ---------- */
+//     bool build(const std::vector<Clause>& in, int n) {
+//         num_vars = n;
+//         val.assign(n + 1, 0);
+//         reason.assign(n + 1, -1);
+//         activity.assign(n + 1, 0.0);
+//         trail.clear(); level_start.clear(); level_start.push_back(0);
+
+//         for (const Clause& c : in)
+//             if (c.lit.empty()) return false;      // empty clause → UNSAT
+
+//         cls.reserve(in.size());
+//         watchlist.assign(2 * n + 1, {});
+
+//         for (const Clause& c : in) {
+//             cls.push_back({ c.lit, 0, c.lit.size() > 1 ? 1 : 0 });
+//             int id = int(cls.size()) - 1;
+//             add_watch(c.lit[0], id);
+//             if (c.lit.size() > 1) add_watch(c.lit[1], id);
+//         }
+//         return true;
+//     }
+//     void add_watch(int lit, int cid) {
+//         watchlist[lit2idx(lit, num_vars)].push_back(cid);
+//     }
+
+//     /* ---------- BCP ---------- */
+//     int propagate() {
+//         size_t qhead = 0;
+//         while (qhead < trail.size()) {
+//             int lit = -trail[qhead++];                        // falsified
+//             auto& wl = watchlist[lit2idx(lit, num_vars)];
+//             for (size_t i = 0; i < wl.size(); ) {
+//                 int cid = wl[i];
+//                 WClause& c = cls[cid];
+
+//                 // identify which watch is 'lit'
+//                 int* watch_idx = (c.lit[c.w1] == lit) ? &c.w1 : &c.w2;
+//                 int other_idx  = (watch_idx == &c.w1) ? c.w2 : c.w1;
+//                 int other_lit  = c.lit[other_idx];
+
+//                 // clause already satisfied?
+//                 if (val[abs(other_lit)] == (other_lit > 0 ? 1 : -1)) { ++i; continue; }
+
+//                 // try to find new watch
+//                 bool found = false;
+//                 for (size_t k = 0; k < c.lit.size(); ++k) {
+//                     if (k == c.w1 || k == c.w2) continue;
+//                     int L = c.lit[k];
+//                     int v = val[abs(L)];
+//                     if (v == 0 || v == (L > 0 ? 1 : -1)) {
+//                         *watch_idx = int(k);
+//                         add_watch(L, cid);
+//                         wl[i] = wl.back(); wl.pop_back();
+//                         found = true;
+//                         break;
+//                     }
+//                 }
+//                 if (found) continue;
+
+//                 // no replacement watch
+//                 int v = val[abs(other_lit)];
+//                 if (v == 0) {
+//                     assign(other_lit, cid);             // unit
+//                     ++i;
+//                 } else {
+//                     // conflict
+//                     wl[i] = wl.back(); wl.pop_back();
+//                     return cid;
+//                 }
+//             }
+//         }
+//         return -1;          // no conflict
+//     }
+//     void assign(int lit, int reason_cid) {
+//         val[abs(lit)] = (lit > 0 ? 1 : -1);
+//         reason[abs(lit)] = reason_cid;
+//         trail.push_back(lit);
+//         ++propagations;
+//     }
+
+//     /* ---------- VSIDS ---------- */
+//     void bump_var(int v) {
+//         activity[v] += var_inc;
+//         if (activity[v] > 1e100) {           // rescale
+//             for (double &a : activity) a *= 1e-100;
+//             var_inc *= 1e-100;
+//         }
+//     }
+//     void bump_clause(const std::vector<int>& cl) {
+//         for (int lit : cl) bump_var(abs(lit));
+//         var_inc /= var_decay;
+//     }
+
+//     int pick_branch_var() {
+//         double best = -1.0;
+//         int    var  = 0;
+//         for (int v = 1; v <= num_vars; ++v)
+//             if (val[v] == 0 && activity[v] > best) { best = activity[v]; var = v; }
+//         return var;
+//     }
+
+//     /* ---------- conflict analysis (First UIP) ---------- */
+//     std::vector<int> analyze(int confl_cid, int& out_blevel) {
+//         std::vector<int> learnt;
+//         learnt.reserve(16);
+
+//         std::vector<char> seen(num_vars + 1, 0);
+//         int counter = 0, ptr = int(trail.size()) - 1;
+
+//         auto& confl_clause = cls[confl_cid].lit;
+//         for (int lit : confl_clause) {
+//             int v = abs(lit);
+//             if (!seen[v]) {
+//                 seen[v] = 1;
+//                 bump_var(v);
+//                 if (decision_level(v) == current_level())
+//                     ++counter;
+//                 else
+//                     learnt.push_back(lit);
+//             }
+//         }
+
+//         int first_uip_lit = 0;
+
+//         while (counter > 0) {
+//             int lit = trail[ptr--];
+//             int v   = abs(lit);
+//             if (!seen[v]) continue;
+
+//             if (reason[v] != -1) {
+//                 auto& rcl = cls[reason[v]].lit;
+//                 for (int q : rcl) {
+//                     int u = abs(q);
+//                     if (!seen[u]) {
+//                         seen[u] = 1;
+//                         bump_var(u);
+//                         if (decision_level(u) == current_level())
+//                             ++counter;
+//                         else
+//                             learnt.push_back(q);
+//                     }
+//                 }
+//             }
+//             --counter;                 // resolved this literal
+//             first_uip_lit = -lit;      // negate so clause becomes asserting
+//         }
+//         learnt.push_back(first_uip_lit);
+
+//         /* determine backjump level = max level of all lits except the UIP */
+//         int max_level = 0;
+//         for (int lit : learnt)
+//             if (lit != first_uip_lit)
+//                 max_level = std::max(max_level, decision_level(abs(lit)));
+//         out_blevel = max_level;
+
+//         bump_clause(learnt);
+//         return learnt;
+//     }
+
+//     /* ---------- backtracking ---------- */
+//     void backtrack(int lvl) {
+//         for (size_t i = trail.size(); i-- > level_start[lvl]; ) {
+//             int v   = abs(trail[i]);
+//             val[v]  = 0;
+//             reason[v] = -1;
+//         }
+//         trail.resize(level_start[lvl]);
+//         level_start.resize(lvl + 1);
+//     }
+//     int current_level() const { return int(level_start.size()) - 1; }
+//     int decision_level(int var) const {
+//         // binary search could work, but linear scan on 'level_start' is trivial
+//         for (int lvl = current_level(); lvl >= 0; --lvl)
+//             if (level_start[lvl] <= index_in_trail(var))
+//                 return lvl;
+//         return 0;
+//     }
+//     int index_in_trail(int var) const {
+//         for (int i = int(trail.size()) - 1; i >= 0; --i)
+//             if (abs(trail[i]) == var) return i;
+//         return -1;
+//     }
+
+//     /* ---------- top-level CDCL loop ---------- */
+//     Result cdcl_search() {
+//         if (propagate() != -1) return Result::UNSAT;   // top-level conflict
+
+//         while (true) {
+//             if (conflicts_seen >= next_restart_at) {
+//                 restart();
+//             }
+
+//             int var = pick_branch_var();
+//             if (var == 0) return Result::SAT;          // all assigned
+
+//             ++decisions;
+//             level_start.push_back(trail.size());
+//             assign(var, -1);                           // branch True by default
+
+//             while (true) {
+//                 int confl = propagate();
+//                 if (confl == -1) break;                // no conflict, continue search
+
+//                 ++conflicts_seen;
+//                 int back_lvl;
+//                 auto learnt = analyze(confl, back_lvl);
+
+//                 if (back_lvl < 0) return Result::UNSAT; // should not happen
+
+//                 add_learned_clause(learnt);
+//                 backtrack(back_lvl);
+//                 assign(learnt.back(), int(cls.size()) - 1);  // assert UIP literal
+
+//                 if (current_level() == 0 && propagate() != -1)
+//                     return Result::UNSAT;              // conflict at level 0
+//             }
+//         }
+//     }
+
+//     void add_learned_clause(const std::vector<int>& cl) {
+//         cls.push_back({ cl, 0, cl.size() > 1 ? 1 : 0 });
+//         int id = int(cls.size()) - 1;
+//         add_watch(cl[0], id);
+//         if (cl.size() > 1) add_watch(cl[1], id);
+//     }
+
+//     /* ---------- restarts ---------- */
+//     void restart() {
+//         backtrack(0);
+//         next_restart_at = uint64_t(next_restart_at * restart_factor);
+//     }
+// };

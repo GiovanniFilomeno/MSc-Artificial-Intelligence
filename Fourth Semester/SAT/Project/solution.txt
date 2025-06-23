@@ -1,0 +1,519 @@
+Q540900@LPTP2064700 ~ % cd Desktop/A.I.\ Master/Fourth\ Semester/SAT/Project
+Q540900@LPTP2064700 Project %  ./satsolve test-formulas
+
+=== "or.in" (2 vars, 1 clauses) ===
+Recursive DPLL: SAT  decisions=2  prop=0  time=0.000625 ms
+Watched‑literal DPLL (Debug): SAT  decisions=2  prop=2  time=0.001 ms
+CDCL + learning: SAT  decisions=2  prop=0  time=0.003709 ms
+PicoSAT-ref: SAT  decisions=2  prop=2  time=0.115458 ms
+
+=== "add64.in" (1428 vars, 3901 clauses) ===
+Recursive DPLL: UNSAT  decisions=128  prop=1427  time=4.54275 ms
+Watched‑literal DPLL (Debug): TIMEOUT (>5 min)
+CDCL + learning: UNSAT  decisions=192  prop=1237  time=1.41658 ms
+PicoSAT-ref: UNSAT  decisions=9561  prop=199260  time=12.2464 ms
+
+=== "mus3.in" (2 vars, 4 clauses) ===
+Recursive DPLL: UNSAT  decisions=0  prop=1  time=0.000166 ms
+Watched‑literal DPLL (Debug): UNSAT  decisions=0  prop=0  time=0 ms
+CDCL + learning: UNSAT  decisions=1  prop=1  time=0.001 ms
+PicoSAT-ref: UNSAT  decisions=0  prop=0  time=0.094667 ms
+
+=== "sat8.in" (3 vars, 7 clauses) ===
+Recursive DPLL: UNSAT  decisions=2  prop=2  time=0.002042 ms
+Watched‑literal DPLL (Debug): SAT  decisions=2  prop=5  time=0.00225 ms
+CDCL + learning: UNSAT  decisions=4  prop=7  time=0.010292 ms
+PicoSAT-ref: SAT  decisions=2  prop=4  time=0.090792 ms
+
+=== "empty.in" (0 vars, 0 clauses) ===
+Recursive DPLL: SAT  decisions=0  prop=0  time=0.000166 ms
+Watched‑literal DPLL (Debug): SAT  decisions=0  prop=0  time=0 ms
+CDCL + learning: SAT  decisions=0  prop=0  time=0.000125 ms
+PicoSAT-ref: SAT  decisions=0  prop=0  time=0.017209 ms
+
+=== "prime1681.in" (989 vars, 2908 clauses) ===
+Recursive DPLL: UNSAT  decisions=9  prop=926  time=1.98063 ms
+Watched‑literal DPLL (Debug): SAT  decisions=1464  prop=144373  time=14.7978 ms
+CDCL + learning: UNSAT  decisions=89  prop=1400  time=0.510125 ms
+PicoSAT-ref: SAT  decisions=146  prop=125414  time=16.3474 ms
+
+=== "assume3.in" (4 vars, 3 clauses) ===
+Recursive DPLL: SAT  decisions=3  prop=1  time=0.002125 ms
+Watched‑literal DPLL (Debug): SAT  decisions=4  prop=6  time=0.0025 ms
+CDCL + learning: SAT  decisions=3  prop=1  time=0.001375 ms
+PicoSAT-ref: SAT  decisions=4  prop=5  time=0.089375 ms
+
+=== "ph3.in" (12 vars, 22 clauses) ===
+Recursive DPLL: UNSAT  decisions=2  prop=10  time=0.005375 ms
+Watched‑literal DPLL (Debug): UNSAT  decisions=7  prop=73  time=0.011584 ms
+CDCL + learning: UNSAT  decisions=4  prop=18  time=0.095208 ms
+PicoSAT-ref: UNSAT  decisions=9  prop=132  time=0.189916 ms
+
+=== "clash.in" (1 vars, 3 clauses) ===
+Recursive DPLL: UNSAT  decisions=0  prop=1  time=0.000916 ms
+Watched‑literal DPLL (Debug): UNSAT  decisions=0  prop=0  time=0 ms
+CDCL + learning: UNSAT  decisions=1  prop=1  time=0.003125 ms
+PicoSAT-ref: UNSAT  decisions=0  prop=0  time=0.035208 ms
+
+=== "add8.in" (149 vars, 400 clauses) ===
+Recursive DPLL: UNSAT  decisions=16  prop=148  time=0.170542 ms
+Watched‑literal DPLL (Debug): UNSAT  decisions=27275  prop=695290  time=46.3841 ms
+CDCL + learning: UNSAT  decisions=21  prop=129  time=0.046959 ms
+PicoSAT-ref: UNSAT  decisions=208  prop=5710  time=1.63517 ms
+
+=== "assume7.in" (3 vars, 2 clauses) ===
+Recursive DPLL: SAT  decisions=1  prop=2  time=0.00175 ms
+Watched‑literal DPLL (Debug): SAT  decisions=2  prop=3  time=0.001125 ms
+CDCL + learning: SAT  decisions=2  prop=1  time=0.001125 ms
+PicoSAT-ref: SAT  decisions=1  prop=13  time=0.051458 ms
+
+=== "unit3.in" (2 vars, 2 clauses) ===
+Recursive DPLL: SAT  decisions=0  prop=2  time=0.00175 ms
+Watched‑literal DPLL (Debug): SAT  decisions=0  prop=2  time=0.000291 ms
+CDCL + learning: SAT  decisions=2  prop=2  time=0.003792 ms
+PicoSAT-ref: SAT  decisions=0  prop=2  time=0.032625 ms
+
+=== "ph2.in" (6 vars, 9 clauses) ===
+Recursive DPLL: UNSAT  decisions=1  prop=5  time=0.002875 ms
+Watched‑literal DPLL (Debug): UNSAT  decisions=1  prop=12  time=0.00225 ms
+CDCL + learning: UNSAT  decisions=1  prop=10  time=0.00425 ms
+PicoSAT-ref: UNSAT  decisions=0  prop=12  time=0.091084 ms
+
+=== "eq1.in" (2 vars, 2 clauses) ===
+Recursive DPLL: SAT  decisions=1  prop=1  time=0.001583 ms
+Watched‑literal DPLL (Debug): SAT  decisions=1  prop=2  time=0.001417 ms
+CDCL + learning: SAT  decisions=1  prop=1  time=0.001167 ms
+PicoSAT-ref: SAT  decisions=1  prop=10  time=0.039208 ms
+
+=== "mcs1.in" (3 vars, 6 clauses) ===
+Recursive DPLL: UNSAT  decisions=0  prop=1  time=0.000708 ms
+Watched‑literal DPLL (Debug): UNSAT  decisions=0  prop=0  time=0 ms
+CDCL + learning: UNSAT  decisions=1  prop=2  time=0.003084 ms
+PicoSAT-ref: UNSAT  decisions=0  prop=0  time=0.047833 ms
+
+=== "unit2.in" (2 vars, 2 clauses) ===
+Recursive DPLL: SAT  decisions=0  prop=2  time=0.00125 ms
+Watched‑literal DPLL (Debug): SAT  decisions=0  prop=2  time=0.000625 ms
+CDCL + learning: SAT  decisions=2  prop=0  time=0.001125 ms
+PicoSAT-ref: SAT  decisions=0  prop=2  time=0.035 ms
+
+=== "ph6.in" (42 vars, 133 clauses) ===
+Recursive DPLL: UNSAT  decisions=5  prop=37  time=0.021791 ms
+Watched‑literal DPLL (Debug): UNSAT  decisions=1556  prop=25115  time=3.29354 ms
+CDCL + learning: UNSAT  decisions=5  prop=36  time=0.065167 ms
+PicoSAT-ref: UNSAT  decisions=858  prop=12778  time=7.96525 ms
+
+=== "mus2.in" (2 vars, 4 clauses) ===
+Recursive DPLL: UNSAT  decisions=1  prop=1  time=0.001166 ms
+Watched‑literal DPLL (Debug): UNSAT  decisions=1  prop=4  time=0.001875 ms
+CDCL + learning: UNSAT  decisions=1  prop=3  time=0.003584 ms
+PicoSAT-ref: UNSAT  decisions=0  prop=4  time=0.058 ms
+
+=== "sat9.in" (3 vars, 7 clauses) ===
+Recursive DPLL: SAT  decisions=2  prop=1  time=0.001875 ms
+Watched‑literal DPLL (Debug): SAT  decisions=2  prop=5  time=0.00275 ms
+CDCL + learning: SAT  decisions=3  prop=3  time=0.005 ms
+PicoSAT-ref: SAT  decisions=2  prop=4  time=0.058 ms
+
+=== "prime361.in" (615 vars, 1798 clauses) ===
+Recursive DPLL: UNSAT  decisions=7  prop=563  time=1.53821 ms
+Watched‑literal DPLL (Debug): SAT  decisions=193  prop=16000  time=3.61083 ms
+CDCL + learning: UNSAT  decisions=24  prop=328  time=0.287833 ms
+PicoSAT-ref: SAT  decisions=0  prop=77866  time=10.7579 ms
+
+=== "dominate1.in" (8 vars, 8 clauses) ===
+Recursive DPLL: SAT  decisions=4  prop=4  time=0.002834 ms
+Watched‑literal DPLL (Debug): SAT  decisions=3  prop=8  time=0.003542 ms
+CDCL + learning: SAT  decisions=7  prop=1  time=0.002541 ms
+PicoSAT-ref: SAT  decisions=4  prop=18  time=0.069292 ms
+
+=== "assume2.in" (3 vars, 2 clauses) ===
+Recursive DPLL: SAT  decisions=1  prop=2  time=0.001375 ms
+Watched‑literal DPLL (Debug): SAT  decisions=2  prop=3  time=0.000958 ms
+CDCL + learning: SAT  decisions=3  prop=0  time=0.001083 ms
+PicoSAT-ref: SAT  decisions=1  prop=10  time=0.042625 ms
+
+=== "sat2.in" (2 vars, 3 clauses) ===
+Recursive DPLL: SAT  decisions=1  prop=1  time=0.001583 ms
+Watched‑literal DPLL (Debug): SAT  decisions=1  prop=2  time=0.0015 ms
+CDCL + learning: SAT  decisions=1  prop=3  time=0.00275 ms
+PicoSAT-ref: SAT  decisions=0  prop=6  time=0.043959 ms
+
+=== "f3r.in" (4 vars, 12 clauses) ===
+Recursive DPLL: UNSAT  decisions=2  prop=2  time=0.002667 ms
+Watched‑literal DPLL (Debug): UNSAT  decisions=3  prop=11  time=0.005 ms
+CDCL + learning: UNSAT  decisions=5  prop=12  time=0.008875 ms
+PicoSAT-ref: UNSAT  decisions=3  prop=11  time=0.06625 ms
+
+=== "full2no01.in" (2 vars, 3 clauses) ===
+Recursive DPLL: SAT  decisions=1  prop=1  time=0.001458 ms
+Watched‑literal DPLL (Debug): SAT  decisions=1  prop=2  time=0.001292 ms
+CDCL + learning: SAT  decisions=1  prop=3  time=0.003 ms
+PicoSAT-ref: SAT  decisions=0  prop=6  time=0.048166 ms
+
+=== "full2no11.in" (2 vars, 3 clauses) ===
+Recursive DPLL: UNSAT  decisions=1  prop=1  time=0.001958 ms
+Watched‑literal DPLL (Debug): SAT  decisions=1  prop=4  time=0.00225 ms
+CDCL + learning: SAT  decisions=1  prop=3  time=0.003042 ms
+PicoSAT-ref: SAT  decisions=0  prop=4  time=0.04025 ms
+
+=== "add8R.in" (149 vars, 400 clauses) ===
+Recursive DPLL: UNSAT  decisions=16  prop=148  time=0.17825 ms
+Watched‑literal DPLL (Debug): UNSAT  decisions=27493  prop=707672  time=50.5574 ms
+CDCL + learning: UNSAT  decisions=21  prop=129  time=0.06 ms
+PicoSAT-ref: UNSAT  decisions=208  prop=5710  time=1.29767 ms
+
+=== "f2r.in" (3 vars, 7 clauses) ===
+Recursive DPLL: UNSAT  decisions=1  prop=1  time=0.0015 ms
+Watched‑literal DPLL (Debug): UNSAT  decisions=1  prop=4  time=0.006125 ms
+CDCL + learning: UNSAT  decisions=1  prop=5  time=0.003375 ms
+PicoSAT-ref: UNSAT  decisions=0  prop=5  time=0.058459 ms
+
+=== "sat13.in" (3 vars, 7 clauses) ===
+Recursive DPLL: SAT  decisions=2  prop=2  time=0.00275 ms
+Watched‑literal DPLL (Debug): SAT  decisions=3  prop=8  time=0.00325 ms
+CDCL + learning: UNSAT  decisions=4  prop=7  time=0.007208 ms
+PicoSAT-ref: SAT  decisions=3  prop=6  time=0.057375 ms
+
+=== "sat6.in" (3 vars, 7 clauses) ===
+Recursive DPLL: SAT  decisions=2  prop=1  time=0.003333 ms
+Watched‑literal DPLL (Debug): SAT  decisions=2  prop=3  time=0.001375 ms
+CDCL + learning: SAT  decisions=2  prop=1  time=0.001667 ms
+PicoSAT-ref: SAT  decisions=2  prop=3  time=0.046667 ms
+
+=== "prime49.in" (219 vars, 628 clauses) ===
+Recursive DPLL: UNSAT  decisions=4  prop=198  time=0.311959 ms
+Watched‑literal DPLL (Debug): SAT  decisions=47  prop=2046  time=0.451209 ms
+CDCL + learning: UNSAT  decisions=24  prop=323  time=0.203541 ms
+PicoSAT-ref: SAT  decisions=0  prop=5027  time=1.41825 ms
+
+=== "prime841.in" (791 vars, 2320 clauses) ===
+Recursive DPLL: UNSAT  decisions=8  prop=736  time=2.50317 ms
+Watched‑literal DPLL (Debug): SAT  decisions=740  prop=64019  time=9.06333 ms
+CDCL + learning: UNSAT  decisions=72  prop=1123  time=0.9905 ms
+PicoSAT-ref: SAT  decisions=28  prop=103986  time=10.124 ms
+
+=== "add2.in" (17 vars, 40 clauses) ===
+Recursive DPLL: UNSAT  decisions=3  prop=14  time=0.010375 ms
+Watched‑literal DPLL (Debug): UNSAT  decisions=5  prop=66  time=0.013375 ms
+CDCL + learning: UNSAT  decisions=3  prop=29  time=0.011125 ms
+PicoSAT-ref: UNSAT  decisions=0  prop=61  time=0.108792 ms
+
+=== "sat7.in" (3 vars, 7 clauses) ===
+Recursive DPLL: SAT  decisions=2  prop=1  time=0.002166 ms
+Watched‑literal DPLL (Debug): SAT  decisions=2  prop=3  time=0.001625 ms
+CDCL + learning: SAT  decisions=3  prop=3  time=0.0045 ms
+PicoSAT-ref: SAT  decisions=2  prop=3  time=0.0455 ms
+
+=== "full4.in" (4 vars, 16 clauses) ===
+Recursive DPLL: UNSAT  decisions=3  prop=3  time=0.004792 ms
+Watched‑literal DPLL (Debug): UNSAT  decisions=7  prop=22  time=0.01025 ms
+CDCL + learning: UNSAT  decisions=10  prop=17  time=0.016458 ms
+PicoSAT-ref: UNSAT  decisions=7  prop=14  time=0.081458 ms
+
+=== "prime169.in" (461 vars, 1342 clauses) ===
+Recursive DPLL: UNSAT  decisions=6  prop=422  time=0.9435 ms
+Watched‑literal DPLL (Debug): SAT  decisions=208  prop=13807  time=2.96925 ms
+CDCL + learning: UNSAT  decisions=18  prop=248  time=0.111417 ms
+PicoSAT-ref: SAT  decisions=0  prop=33455  time=5.54346 ms
+
+=== "add16R.in" (330 vars, 895 clauses) ===
+Recursive DPLL: UNSAT  decisions=32  prop=329  time=0.665958 ms
+Watched‑literal DPLL (Debug): TIMEOUT (>5 min)
+CDCL + learning: UNSAT  decisions=46  prop=285  time=0.101583 ms
+PicoSAT-ref: UNSAT  decisions=874  prop=21764  time=1.73571 ms
+
+=== "scc1.in" (3 vars, 3 clauses) ===
+Recursive DPLL: SAT  decisions=1  prop=2  time=0.000459 ms
+Watched‑literal DPLL (Debug): SAT  decisions=1  prop=3  time=0.000375 ms
+CDCL + learning: SAT  decisions=2  prop=1  time=0.000125 ms
+PicoSAT-ref: SAT  decisions=1  prop=11  time=0.063834 ms
+
+=== "sat3.in" (2 vars, 3 clauses) ===
+Recursive DPLL: UNSAT  decisions=1  prop=1  time=0.001959 ms
+Watched‑literal DPLL (Debug): SAT  decisions=1  prop=4  time=0.00225 ms
+CDCL + learning: SAT  decisions=1  prop=1  time=0.0005 ms
+PicoSAT-ref: SAT  decisions=0  prop=4  time=0.060041 ms
+
+=== "prime289.in" (615 vars, 1798 clauses) ===
+Recursive DPLL: UNSAT  decisions=7  prop=556  time=1.5295 ms
+Watched‑literal DPLL (Debug): SAT  decisions=489  prop=31206  time=7.29196 ms
+CDCL + learning: UNSAT  decisions=24  prop=320  time=0.272667 ms
+PicoSAT-ref: SAT  decisions=8  prop=76800  time=11.34 ms
+
+=== "full2no00.in" (2 vars, 3 clauses) ===
+Recursive DPLL: SAT  decisions=1  prop=1  time=0.001833 ms
+Watched‑literal DPLL (Debug): SAT  decisions=1  prop=2  time=0.000916 ms
+CDCL + learning: SAT  decisions=1  prop=1  time=0.001125 ms
+PicoSAT-ref: SAT  decisions=0  prop=6  time=0.052917 ms
+
+=== "bug1.in" (2 vars, 3 clauses) ===
+Recursive DPLL: UNSAT  decisions=0  prop=2  time=0.001375 ms
+Watched‑literal DPLL (Debug): UNSAT  decisions=0  prop=0  time=0 ms
+CDCL + learning: UNSAT  decisions=1  prop=2  time=0.003292 ms
+PicoSAT-ref: UNSAT  decisions=0  prop=2  time=0.036292 ms
+
+=== "add128.in" (2282 vars, 6586 clauses) ===
+Recursive DPLL: UNSAT  decisions=256  prop=2028  time=20.754 ms
+Watched‑literal DPLL (Debug): TIMEOUT (>5 min)
+CDCL + learning: TIMEOUT (>5 min)
+PicoSAT-ref: UNSAT  decisions=28256  prop=475054  time=34.0505 ms
+
+=== "prime961.in" (791 vars, 2320 clauses) ===
+Recursive DPLL: UNSAT  decisions=8  prop=736  time=0.539708 ms
+Watched‑literal DPLL (Debug): SAT  decisions=791  prop=791  time=0.000542 ms
+CDCL + learning: SAT  decisions=282695502  prop=706801211  time=300478 ms
+PicoSAT-ref: SAT  decisions=4  prop=100454  time=2.73892 ms
+
+=== "full2no10.in" (2 vars, 3 clauses) ===
+Recursive DPLL: SAT  decisions=1  prop=1  time=0.000541 ms
+Watched‑literal DPLL (Debug): SAT  decisions=1  prop=4  time=0.002416 ms
+CDCL + learning: SAT  decisions=1  prop=1  time=0.000583 ms
+PicoSAT-ref: SAT  decisions=0  prop=4  time=0.048416 ms
+
+=== "sat12.in" (3 vars, 7 clauses) ===
+Recursive DPLL: UNSAT  decisions=2  prop=2  time=0.001833 ms
+Watched‑literal DPLL (Debug): SAT  decisions=3  prop=8  time=0.004042 ms
+CDCL + learning: UNSAT  decisions=4  prop=7  time=0.0075 ms
+PicoSAT-ref: SAT  decisions=3  prop=6  time=0.064459 ms
+
+=== "prime9.in" (65 vars, 178 clauses) ===
+Recursive DPLL: UNSAT  decisions=2  prop=59  time=0.050333 ms
+Watched‑literal DPLL (Debug): SAT  decisions=2  prop=91  time=0.01925 ms
+CDCL + learning: UNSAT  decisions=4  prop=50  time=0.077375 ms
+PicoSAT-ref: SAT  decisions=0  prop=195  time=0.27875 ms
+
+=== "prime2209.in" (1209 vars, 3562 clauses) ===
+Recursive DPLL: UNSAT  decisions=10  prop=1117  time=3.05333 ms
+Watched‑literal DPLL (Debug): SAT  decisions=607  prop=55728  time=7.95817 ms
+CDCL + learning: UNSAT  decisions=48  prop=618  time=0.85425 ms
+PicoSAT-ref: SAT  decisions=357  prop=169480  time=17.1399 ms
+
+=== "sat4.in" (2 vars, 3 clauses) ===
+Recursive DPLL: SAT  decisions=1  prop=1  time=0.001083 ms
+Watched‑literal DPLL (Debug): SAT  decisions=1  prop=4  time=0.001041 ms
+CDCL + learning: SAT  decisions=1  prop=3  time=0.002625 ms
+PicoSAT-ref: SAT  decisions=0  prop=4  time=0.040875 ms
+
+=== "watch0.in" (2 vars, 3 clauses) ===
+Recursive DPLL: SAT  decisions=0  prop=2  time=0.001417 ms
+Watched‑literal DPLL (Debug): SAT  decisions=0  prop=2  time=0.000292 ms
+CDCL + learning: SAT  decisions=1  prop=1  time=0.001 ms
+PicoSAT-ref: SAT  decisions=0  prop=2  time=0.02775 ms
+
+=== "scc2.in" (3 vars, 5 clauses) ===
+Recursive DPLL: UNSAT  decisions=1  prop=2  time=0.002042 ms
+Watched‑literal DPLL (Debug): UNSAT  decisions=1  prop=5  time=0.002459 ms
+CDCL + learning: UNSAT  decisions=1  prop=4  time=0.003208 ms
+PicoSAT-ref: UNSAT  decisions=0  prop=5  time=0.052583 ms
+
+=== "sat0.in" (2 vars, 4 clauses) ===
+Recursive DPLL: UNSAT  decisions=1  prop=1  time=0.002125 ms
+Watched‑literal DPLL (Debug): UNSAT  decisions=1  prop=4  time=0.00175 ms
+CDCL + learning: UNSAT  decisions=1  prop=3  time=0.003458 ms
+PicoSAT-ref: UNSAT  decisions=0  prop=4  time=0.049542 ms
+
+=== "full3.in" (3 vars, 8 clauses) ===
+Recursive DPLL: UNSAT  decisions=2  prop=2  time=0.002625 ms
+Watched‑literal DPLL (Debug): UNSAT  decisions=3  prop=10  time=0.004333 ms
+CDCL + learning: UNSAT  decisions=4  prop=7  time=0.008208 ms
+PicoSAT-ref: UNSAT  decisions=3  prop=6  time=0.069625 ms
+
+=== "prime65537.in" (1950 vars, 6220 clauses) ===
+Recursive DPLL: UNSAT  decisions=15  prop=1810  time=3.1605 ms
+Watched‑literal DPLL (Debug): UNSAT  decisions=26198  prop=2497455  time=174.116 ms
+CDCL + learning: UNSAT  decisions=29  prop=111  time=0.0475 ms
+PicoSAT-ref: UNSAT  decisions=6186  prop=2275914  time=173.793 ms
+
+=== "add2R.in" (17 vars, 40 clauses) ===
+Recursive DPLL: UNSAT  decisions=3  prop=14  time=0.003584 ms
+Watched‑literal DPLL (Debug): UNSAT  decisions=5  prop=67  time=0.005833 ms
+CDCL + learning: UNSAT  decisions=3  prop=29  time=0.011292 ms
+PicoSAT-ref: UNSAT  decisions=0  prop=61  time=0.1235 ms
+
+=== "add32R.in" (695 vars, 1894 clauses) ===
+Recursive DPLL: UNSAT  decisions=64  prop=694  time=2.48013 ms
+Watched‑literal DPLL (Debug): TIMEOUT (>5 min)
+CDCL + learning: UNSAT  decisions=95  prop=601  time=0.258417 ms
+PicoSAT-ref: UNSAT  decisions=2521  prop=57820  time=3.936 ms
+
+=== "add4.in" (60 vars, 157 clauses) ===
+Recursive DPLL: UNSAT  decisions=8  prop=59  time=0.015 ms
+Watched‑literal DPLL (Debug): UNSAT  decisions=0  prop=0  time=0 ms
+CDCL + learning: UNSAT  decisions=8  prop=53  time=0.021333 ms
+PicoSAT-ref: UNSAT  decisions=42  prop=1308  time=0.57825 ms
+
+=== "sat11.in" (3 vars, 7 clauses) ===
+Recursive DPLL: SAT  decisions=2  prop=2  time=0.002417 ms
+Watched‑literal DPLL (Debug): SAT  decisions=3  prop=10  time=0.003791 ms
+CDCL + learning: SAT  decisions=4  prop=6  time=0.0065 ms
+PicoSAT-ref: SAT  decisions=3  prop=7  time=0.064125 ms
+
+=== "sat1.in" (2 vars, 3 clauses) ===
+Recursive DPLL: SAT  decisions=1  prop=1  time=0.001541 ms
+Watched‑literal DPLL (Debug): SAT  decisions=1  prop=2  time=0.001125 ms
+CDCL + learning: SAT  decisions=1  prop=1  time=0.001125 ms
+PicoSAT-ref: SAT  decisions=0  prop=6  time=0.046833 ms
+
+=== "full2R.in" (2 vars, 4 clauses) ===
+Recursive DPLL: UNSAT  decisions=1  prop=1  time=0.001375 ms
+Watched‑literal DPLL (Debug): UNSAT  decisions=1  prop=4  time=0.001542 ms
+CDCL + learning: UNSAT  decisions=1  prop=3  time=0.002584 ms
+PicoSAT-ref: UNSAT  decisions=0  prop=4  time=0.047709 ms
+
+=== "full2.in" (2 vars, 4 clauses) ===
+Recursive DPLL: UNSAT  decisions=1  prop=1  time=0.002416 ms
+Watched‑literal DPLL (Debug): UNSAT  decisions=1  prop=4  time=0.001125 ms
+CDCL + learning: UNSAT  decisions=1  prop=3  time=0.002792 ms
+PicoSAT-ref: UNSAT  decisions=0  prop=4  time=0.017833 ms
+
+=== "full3R.in" (3 vars, 8 clauses) ===
+Recursive DPLL: UNSAT  decisions=2  prop=2  time=0.002416 ms
+Watched‑literal DPLL (Debug): UNSAT  decisions=3  prop=10  time=0.004 ms
+CDCL + learning: UNSAT  decisions=4  prop=7  time=0.007542 ms
+PicoSAT-ref: UNSAT  decisions=3  prop=6  time=0.071417 ms
+
+=== "sub0.in" (3 vars, 2 clauses) ===
+Recursive DPLL: SAT  decisions=3  prop=0  time=0.002834 ms
+Watched‑literal DPLL (Debug): SAT  decisions=3  prop=3  time=0.001 ms
+CDCL + learning: SAT  decisions=3  prop=0  time=0.001125 ms
+PicoSAT-ref: SAT  decisions=3  prop=3  time=0.03925 ms
+
+=== "sat10.in" (3 vars, 7 clauses) ===
+Recursive DPLL: UNSAT  decisions=2  prop=2  time=0.002167 ms
+Watched‑literal DPLL (Debug): SAT  decisions=3  prop=10  time=0.00375 ms
+CDCL + learning: SAT  decisions=2  prop=1  time=0.00175 ms
+PicoSAT-ref: SAT  decisions=3  prop=7  time=0.063167 ms
+
+=== "sat5.in" (3 vars, 8 clauses) ===
+Recursive DPLL: UNSAT  decisions=2  prop=2  time=0.002458 ms
+Watched‑literal DPLL (Debug): UNSAT  decisions=3  prop=10  time=0.004 ms
+CDCL + learning: UNSAT  decisions=4  prop=7  time=0.007542 ms
+PicoSAT-ref: UNSAT  decisions=3  prop=6  time=0.06225 ms
+
+=== "prime1849.in" (989 vars, 2908 clauses) ===
+Recursive DPLL: UNSAT  decisions=9  prop=895  time=3.25413 ms
+Watched‑literal DPLL (Debug): SAT  decisions=1001  prop=99404  time=11.6873 ms
+CDCL + learning: UNSAT  decisions=82  prop=1081  time=0.721042 ms
+PicoSAT-ref: SAT  decisions=27  prop=102767  time=11.2424 ms
+
+=== "watch1.in" (3 vars, 5 clauses) ===
+Recursive DPLL: SAT  decisions=1  prop=2  time=0.000958 ms
+Watched‑literal DPLL (Debug): SAT  decisions=1  prop=3  time=0.000958 ms
+CDCL + learning: SAT  decisions=2  prop=1  time=0.000917 ms
+PicoSAT-ref: SAT  decisions=0  prop=9  time=0.06225 ms
+
+=== "add4R.in" (60 vars, 157 clauses) ===
+Recursive DPLL: UNSAT  decisions=8  prop=59  time=0.049917 ms
+Watched‑literal DPLL (Debug): UNSAT  decisions=162  prop=3554  time=0.39925 ms
+CDCL + learning: UNSAT  decisions=8  prop=53  time=0.086 ms
+PicoSAT-ref: UNSAT  decisions=42  prop=1308  time=0.593375 ms
+
+=== "eq2.in" (2 vars, 2 clauses) ===
+Recursive DPLL: SAT  decisions=1  prop=1  time=0.000958 ms
+Watched‑literal DPLL (Debug): SAT  decisions=1  prop=2  time=0.000916 ms
+CDCL + learning: SAT  decisions=1  prop=1  time=0.00075 ms
+PicoSAT-ref: SAT  decisions=1  prop=10  time=0.030708 ms
+
+=== "prime121.in" (329 vars, 952 clauses) ===
+Recursive DPLL: UNSAT  decisions=5  prop=301  time=0.54825 ms
+Watched‑literal DPLL (Debug): SAT  decisions=41  prop=3197  time=0.734375 ms
+CDCL + learning: UNSAT  decisions=30  prop=399  time=0.262291 ms
+PicoSAT-ref: SAT  decisions=0  prop=12261  time=2.70275 ms
+
+=== "prime4.in" (20 vars, 49 clauses) ===
+Recursive DPLL: SAT  decisions=2  prop=18  time=0.01475 ms
+Watched‑literal DPLL (Debug): SAT  decisions=1  prop=29  time=0.006 ms
+CDCL + learning: SAT  decisions=2  prop=18  time=0.005792 ms
+PicoSAT-ref: SAT  decisions=0  prop=29  time=0.121875 ms
+
+=== "prime529.in" (791 vars, 2320 clauses) ===
+Recursive DPLL: UNSAT  decisions=8  prop=716  time=2.46067 ms
+Watched‑literal DPLL (Debug): SAT  decisions=193  prop=23779  time=5.25 ms
+CDCL + learning: UNSAT  decisions=31  prop=407  time=0.250541 ms
+PicoSAT-ref: SAT  decisions=9  prop=101134  time=10.6649 ms
+
+=== "unit1.in" (1 vars, 1 clauses) ===
+Recursive DPLL: SAT  decisions=0  prop=1  time=0.001125 ms
+Watched‑literal DPLL (Debug): SAT  decisions=0  prop=1  time=8.4e-05 ms
+CDCL + learning: SAT  decisions=1  prop=1  time=0.003167 ms
+PicoSAT-ref: SAT  decisions=0  prop=1  time=0.029584 ms
+
+=== "mcs2.in" (4 vars, 8 clauses) ===
+Recursive DPLL: UNSAT  decisions=1  prop=1  time=0.001791 ms
+Watched‑literal DPLL (Debug): UNSAT  decisions=1  prop=4  time=0.001542 ms
+CDCL + learning: UNSAT  decisions=3  prop=5  time=0.005 ms
+PicoSAT-ref: UNSAT  decisions=0  prop=4  time=0.05425 ms
+
+=== "mus1.in" (1 vars, 2 clauses) ===
+Recursive DPLL: UNSAT  decisions=0  prop=1  time=0.002041 ms
+Watched‑literal DPLL (Debug): UNSAT  decisions=0  prop=0  time=0 ms
+CDCL + learning: UNSAT  decisions=1  prop=1  time=0.003208 ms
+PicoSAT-ref: UNSAT  decisions=0  prop=0  time=0.038458 ms
+
+=== "ph5.in" (30 vars, 81 clauses) ===
+Recursive DPLL: UNSAT  decisions=4  prop=26  time=0.016208 ms
+Watched‑literal DPLL (Debug): UNSAT  decisions=209  prop=2984  time=0.421208 ms
+CDCL + learning: UNSAT  decisions=4  prop=25  time=0.067667 ms
+PicoSAT-ref: UNSAT  decisions=183  prop=2444  time=1.241 ms
+
+=== "prime1369.in" (989 vars, 2908 clauses) ===
+Recursive DPLL: UNSAT  decisions=9  prop=897  time=3.62429 ms
+Watched‑literal DPLL (Debug): SAT  decisions=1289  prop=112506  time=13.0611 ms
+CDCL + learning: UNSAT  decisions=39  prop=517  time=0.232458 ms
+PicoSAT-ref: SAT  decisions=178  prop=126653  time=14.6183 ms
+
+=== "unit5.in" (6 vars, 7 clauses) ===
+Recursive DPLL: UNSAT  decisions=0  prop=6  time=0.001542 ms
+Watched‑literal DPLL (Debug): UNSAT  decisions=0  prop=0  time=0 ms
+CDCL + learning: UNSAT  decisions=4  prop=12  time=0.008875 ms
+PicoSAT-ref: UNSAT  decisions=0  prop=6  time=0.063708 ms
+
+=== "mus0.in" (0 vars, 1 clauses) ===
+Recursive DPLL: UNSAT  decisions=0  prop=0  time=0.000208 ms
+Watched‑literal DPLL (Debug): UNSAT  decisions=0  prop=0  time=0 ms
+CDCL + learning: UNSAT  decisions=0  prop=0  time=0 ms
+PicoSAT-ref: UNSAT  decisions=0  prop=0  time=0.026208 ms
+
+=== "ph4.in" (20 vars, 45 clauses) ===
+Recursive DPLL: UNSAT  decisions=3  prop=17  time=0.008333 ms
+Watched‑literal DPLL (Debug): UNSAT  decisions=41  prop=476  time=0.074542 ms
+CDCL + learning: UNSAT  decisions=3  prop=16  time=0.067834 ms
+PicoSAT-ref: UNSAT  decisions=35  prop=508  time=0.288166 ms
+
+=== "unit4.in" (2 vars, 3 clauses) ===
+Recursive DPLL: UNSAT  decisions=0  prop=2  time=0.000917 ms
+Watched‑literal DPLL (Debug): UNSAT  decisions=0  prop=0  time=0 ms
+CDCL + learning: SAT  decisions=1  prop=3  time=0.003583 ms
+PicoSAT-ref: UNSAT  decisions=0  prop=0  time=0.035208 ms
+
+=== "add32.in" (695 vars, 1894 clauses) ===
+Recursive DPLL: UNSAT  decisions=64  prop=694  time=1.89183 ms
+Watched‑literal DPLL (Debug): TIMEOUT (>5 min)
+CDCL + learning: UNSAT  decisions=95  prop=601  time=0.264375 ms
+PicoSAT-ref: UNSAT  decisions=2521  prop=57820  time=4.1125 ms
+
+=== "prime25.in" (131 vars, 370 clauses) ===
+Recursive DPLL: UNSAT  decisions=3  prop=115  time=0.031958 ms
+Watched‑literal DPLL (Debug): SAT  decisions=131  prop=131  time=0.000209 ms
+CDCL + learning: UNSAT  decisions=17  prop=202  time=0.047291 ms
+PicoSAT-ref: SAT  decisions=0  prop=1272  time=0.65075 ms
+
+=== "add16.in" (330 vars, 895 clauses) ===
+Recursive DPLL: UNSAT  decisions=32  prop=329  time=0.65675 ms
+Watched‑literal DPLL (Debug): TIMEOUT (>5 min)
+CDCL + learning: UNSAT  decisions=46  prop=285  time=0.1115 ms
+PicoSAT-ref: UNSAT  decisions=874  prop=21764  time=1.71825 ms
+
+=== "unit0.in" (1 vars, 1 clauses) ===
+Recursive DPLL: SAT  decisions=0  prop=1  time=0.0005 ms
+Watched‑literal DPLL (Debug): SAT  decisions=2  prop=1  time=0 ms
+CDCL + learning: SAT  decisions=1  prop=0  time=0.000167 ms
+PicoSAT-ref: SAT  decisions=0  prop=1  time=0.036166 ms
+
+=== "mcs3.in" (3 vars, 7 clauses) ===
+Recursive DPLL: UNSAT  decisions=0  prop=1  time=0.000625 ms
+Watched‑literal DPLL (Debug): UNSAT  decisions=0  prop=0  time=0 ms
+CDCL + learning: UNSAT  decisions=0  prop=0  time=0 ms
+PicoSAT-ref: UNSAT  decisions=0  prop=0  time=0.059167 ms
+Q540900@LPTP2064700 Project % 

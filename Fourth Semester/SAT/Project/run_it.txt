@@ -1,0 +1,19 @@
+g++ -std=c++17 -O2 -march=native -pipe \
+    main.cpp solver1_recursive.cpp solver2_watched.cpp solver3_cdcl.cpp \
+    -o satsolve
+
+./satsolve test-formulas
+
+
+# Compila
+g++ -std=c++17 -O2 -march=native -pipe \
+  main.cpp \
+  solver1_recursive.cpp \
+  solver2_watched.cpp \
+  solver3_cdcl.cpp \
+  solver4_picosat.cpp \
+  picosat.o \
+  -pthread \
+  -o satsolve
+
+./satsolve test-formulas
