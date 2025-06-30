@@ -101,7 +101,7 @@ It is divided into the following semesters and courses. Each course contains dif
 - Assignment 3: Pandas
 - Assignment 4: Web Based Application
 - Assignment 5: PyTorch Basics
-- Assignment 6: 
+- Assignment 6: Predicting Air Quality with Machine Learning
 ### SAT Programming: 
 - Exercise 1: Tseitin Transformation and Limboole
 - Exercise 2: BCP and DP methods
