@@ -1,8 +1,0 @@
-Sequence 1:
-
-DNA-Sequence: XXXXXXX
-
-RNA-Sequence: XXX
-
-AA-Sequence: XX
-

@@ -69,7 +69,6 @@ It is divided into the following semesters and courses. Each course contains dif
 - Exercise 3: Markov chain
 - Exercise 4: Numerical Illustration of the Black-Scholes Model
 - Exercise 5: Monte Carlo Integration
-
 ## Third Semester:
 ### Probabilistic Models:
 - Assignment 1: Basic Concepts (Joint Distributions, Probabilistic Queries, Marginal Distributions, Inference by Enumeration, the Bayes Rule, the Chain Rule, Independence, and Conditional Independence)
@@ -84,7 +83,9 @@ It is divided into the following semesters and courses. Each course contains dif
 - Assignment 2: Feature Extraction and Segmentation
 - Assignment 3: Optical Flow, Object Tracking and Detection
 - Assignment 4: 3D Reconstruction
-
+### xAI 
+- 1st Project: Projection Space Exploration
+- 2nd Project: Model Explanations
 ## Fourth Semester:
 ### Statistics for AI:
 - Assignment 1: Basics definition, attributes, measurements
@@ -94,6 +95,7 @@ It is divided into the following semesters and courses. Each course contains dif
 - Assignment 3: Matrix Factorization
 - Assignment 4: Evaluation (precision, recall, nDCG)
 - Assignment 5: Evaluation II (popularity calibration, JSD)
+- Assignment 6: Content based Filtering
 ### Programming in Python II
 - Assignment 1: Functions Advanced
 - Assignment 2: Plotting
@@ -108,8 +110,21 @@ It is divided into the following semesters and courses. Each course contains dif
 ### Artificial Intelligence in Life Science: 
 - Assignment 1: QSAR - Drug Activity
 - Assignment 2: Molecular generator
-- Assignment 3:
+- Assignment 3: Synthesis Prediction
 ### Stochastic Simulation:
-
+- Assignment 1: Pseudorandom Number Generation & Statistical Testing
+- Assignment 2: Random Variate Generation Methods
+- Assignment 3: Discrete-Time Stochastic Processes
+- Assignment 4: Continuous-Time Processes & SDE Simulation
 ## Additional Courses:
+### Biological Sequence Analysis:
+- Assignment 1: String Algorithms & Pattern Matching in Genomic Sequences
+- Assignment 2: Sequence Comparison & Substitution Matrices
+- Assignment 3: Gene Expression Simulation & Alignment-Based Scoring
+### Computational Physics:
+- Assignment 1: Polynomial Interpolation
+- Assignment 2: Fourier Transform
+- Assignment 3: Differentiation
+- Assignment 4: Roots of a function
+
 
