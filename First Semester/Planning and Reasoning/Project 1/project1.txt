@@ -1,0 +1,48 @@
+% Initial State
+tile1_pos1_0 &
+tile2_pos2_0 &
+tile3_pos3_0 &
+tile4_pos4_0 &
+tile5_pos5_0 &
+tile6_pos6_0 &
+empty_pos7_0 &
+tile7_pos8_0 &
+tile8_pos9_0 &
+% Final State
+tile1_pos1_2 &
+tile2_pos2_2 &
+tile3_pos3_2 &
+tile4_pos4_2 &
+tile5_pos5_2 &
+tile6_pos6_2 &
+tile7_pos7_2 &
+tile8_pos8_2 &
+empty_pos9_2 &
+% Movements
+(mv_0_4_4_7 -> (tile4_pos7_1 & !tile4_pos4_1 & empty_pos4_1 & !empty_pos7_1 & tile1_pos1_1 & tile2_pos2_1 & tile3_pos3_1 & tile5_pos5_1 & tile6_pos6_1 & tile7_pos8_1 & tile8_pos9_1)) &
+(mv_0_7_8_7 -> (tile7_pos7_1 & !tile7_pos8_1 & empty_pos8_1 & !empty_pos7_1 & tile1_pos1_1 & tile2_pos2_1 & tile3_pos3_1 & tile4_pos4_1 & tile5_pos5_1 & tile6_pos6_1 & tile8_pos9_1)) &
+(mv_1_1_1_4 -> (tile1_pos4_2 & !tile1_pos1_2 & empty_pos1_2 & !empty_pos4_2 & tile2_pos2_2 & tile3_pos3_2 & tile5_pos5_2 & tile6_pos6_2 & tile4_pos7_2 & tile7_pos8_2 & tile8_pos9_2)) &
+(mv_1_4_7_4 -> (tile4_pos4_2 & !tile4_pos7_2 & empty_pos7_2 & !empty_pos4_2 & tile1_pos1_2 & tile2_pos2_2 & tile3_pos3_2 & tile5_pos5_2 & tile6_pos6_2 & tile7_pos8_2 & tile8_pos9_2)) &
+(mv_1_5_5_4 -> (tile5_pos4_2 & !tile5_pos5_2 & empty_pos5_2 & !empty_pos4_2 & tile1_pos1_2 & tile2_pos2_2 & tile3_pos3_2 & tile6_pos6_2 & tile4_pos7_2 & tile7_pos8_2 & tile8_pos9_2)) &
+(mv_1_5_5_8 -> (tile5_pos8_2 & !tile5_pos5_2 & empty_pos5_2 & !empty_pos8_2 & tile1_pos1_2 & tile2_pos2_2 & tile3_pos3_2 & tile4_pos4_2 & tile6_pos6_2 & tile7_pos7_2 & tile8_pos9_2)) &
+(mv_1_7_7_8 -> (tile7_pos8_2 & !tile7_pos7_2 & empty_pos7_2 & !empty_pos8_2 & tile1_pos1_2 & tile2_pos2_2 & tile3_pos3_2 & tile4_pos4_2 & tile5_pos5_2 & tile6_pos6_2 & tile8_pos9_2)) &
+(mv_1_8_9_8 -> (tile8_pos8_2 & !tile8_pos9_2 & empty_pos9_2 & !empty_pos8_2 & tile1_pos1_2 & tile2_pos2_2 & tile3_pos3_2 & tile4_pos4_2 & tile5_pos5_2 & tile6_pos6_2 & tile7_pos7_2)) &
+% Movement constraints
+((mv_0_4_4_7) -> (mv_1_1_1_4 | mv_1_4_7_4 | mv_1_5_5_4 | mv_1_5_5_8 | mv_1_7_7_8 | mv_1_8_9_8)) &
+((mv_0_7_8_7) -> (mv_1_1_1_4 | mv_1_4_7_4 | mv_1_5_5_4 | mv_1_5_5_8 | mv_1_7_7_8 | mv_1_8_9_8)) &
+% Frame axioms
+((mv_0_4_4_7) -> (tile4_pos7_1 & !tile4_pos4_1 & empty_pos4_1 & !empty_pos7_1 & tile1_pos1_1 & tile2_pos2_1 & tile3_pos3_1 & tile5_pos5_1 & tile6_pos6_1 & tile7_pos8_1 & tile8_pos9_1)) &
+
+((mv_0_7_8_7) -> (tile7_pos7_1 & !tile7_pos8_1 & empty_pos8_1 & !empty_pos7_1 & tile1_pos1_1 & tile2_pos2_1 & tile3_pos3_1 & tile4_pos4_1 & tile5_pos5_1 & tile6_pos6_1 & tile8_pos9_1)) &
+
+((mv_1_1_1_4) -> (tile1_pos4_2 & !tile1_pos1_2 & empty_pos1_2 & !empty_pos4_2 & tile2_pos2_2 & tile3_pos3_2 & tile5_pos5_2 & tile6_pos6_2 & tile4_pos7_2 & tile7_pos8_2 & tile8_pos9_2)) &
+
+((mv_1_4_7_4) -> (tile4_pos4_2 & !tile4_pos7_2 & empty_pos7_2 & !empty_pos4_2 & tile1_pos1_2 & tile2_pos2_2 & tile3_pos3_2 & tile5_pos5_2 & tile6_pos6_2 & tile7_pos8_2 & tile8_pos9_2)) &
+
+((mv_1_5_5_4) -> (tile5_pos4_2 & !tile5_pos5_2 & empty_pos5_2 & !empty_pos4_2 & tile1_pos1_2 & tile2_pos2_2 & tile3_pos3_2 & tile6_pos6_2 & tile4_pos7_2 & tile7_pos8_2 & tile8_pos9_2)) &
+
+((mv_1_5_5_8) -> (tile5_pos8_2 & !tile5_pos5_2 & empty_pos5_2 & !empty_pos8_2 & tile1_pos1_2 & tile2_pos2_2 & tile3_pos3_2 & tile4_pos4_2 & tile6_pos6_2 & tile7_pos7_2 & tile8_pos9_2)) &
+
+((mv_1_7_7_8) -> (tile7_pos8_2 & !tile7_pos7_2 & empty_pos7_2 & !empty_pos8_2 & tile1_pos1_2 & tile2_pos2_2 & tile3_pos3_2 & tile4_pos4_2 & tile5_pos5_2 & tile6_pos6_2 & tile8_pos9_2)) &
+
+((mv_1_8_9_8) -> (tile8_pos8_2 & !tile8_pos9_2 & empty_pos9_2 & !empty_pos8_2 & tile1_pos1_2 & tile2_pos2_2 & tile3_pos3_2 & tile4_pos4_2 & tile5_pos5_2 & tile6_pos6_2 & tile7_pos7_2))

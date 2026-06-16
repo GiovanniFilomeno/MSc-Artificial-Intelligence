@@ -1,0 +1,24 @@
+fourth_assignment([2, 3], 10, [[add, 2, 3, 5]]).
+fourth_assignment([1, 2, 3], 10, [[add, 1, 2, 3], [add, 3, 3, 6]]).
+fourth_assignment([4, 5, 6, 7], 100, [[add, 4, 5, 9], [add, 9, 6, 15], [add, 15, 7, 22]]).
+
+fourth_assignment([5, 3], 10, [[sub, 5, 3, 2]]).
+fourth_assignment([10, 3, 2], 1, [[sub, 10, 3, 7], [sub, 7, 2, 5]]).
+fourth_assignment([20, 5, 3, 2], 1, [[sub, 20, 5, 15], [sub, 15, 3, 12], [sub, 12, 2, 10]]).
+
+fourth_assignment([2, 3], 10, [[mul, 2, 3, 6]]).
+fourth_assignment([2, 3, 4], 100, [[mul, 2, 3, 6], [mul, 6, 4, 24]]).
+fourth_assignment([2, 2, 2, 2], 100, [[mul, 2, 2, 4], [mul, 4, 2, 8], [mul, 8, 2, 16]]).
+
+fourth_assignment([10, 2], 10, [[div, 10, 2, 5]]).
+fourth_assignment([100, 5, 2], 100, [[div, 100, 5, 20], [div, 20, 2, 10]]).
+fourth_assignment([64, 4, 2, 2], 100, [[div, 64, 4, 16], [div, 16, 2, 8], [div, 8, 1, 8]]).
+
+fourth_assignment([2, 3, 4], 40, [[add, 2, 3, 5], [mul, 5, 4, 20]]).
+fourth_assignment([1, 2, 3, 4], 100, [[add, 1, 2, 3], [mul, 3, 4, 12], [mul, 12, 2, 24]]).
+fourth_assignment([6, 2, 3], 96, [[add, 6, 2, 8], [mul, 8, 3, 24], [mul, 24, 2, 48]]).
+
+fourth_assignment([4, 5, 6], 40, [[mul, 4, 5, 20], [add, 20, 6, 26], [add, 26, 9, 35]]).
+fourth_assignment([2, 3, 2, 4], 20, [[mul, 2, 3, 6], [mul, 6, 2, 12], [add, 12, 4, 16], [add, 16, 1, 17]]).
+
+fourth_assignment([64, 4, 10], 30, [[div, 64, 4, 16], [add, 16, 10, 26]]).

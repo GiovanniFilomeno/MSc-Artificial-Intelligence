@@ -1,0 +1,51 @@
+********** SOLUTION **********
+Precision:1.00 Recall:0.80 TP:4 FN:1 TN:5 FP:0 Size:7
+sum(V0,V1):- head(V0,V1).
+sum(V0,V1):- tail(V0,V4),head(V0,V3),sum(V4,V2),add(V2,V3,V1).
+******************************
+Num. programs: 117
+Find Mucs:
+	Called: 94 times 	 Total: 0.08 	 Mean: 0.0008 	 Max: 0.003 	 Percentage: 27%
+Init:
+	Called: 14 times 	 Total: 0.07 	 Mean: 0.0049 	 Max: 0.038 	 Percentage: 24%
+Generate:
+	Called: 130 times 	 Total: 0.06 	 Mean: 0.0005 	 Max: 0.011 	 Percentage: 23%
+Test:
+	Called: 117 times 	 Total: 0.03 	 Mean: 0.0003 	 Max: 0.009 	 Percentage: 11%
+Constrain:
+	Called: 117 times 	 Total: 0.03 	 Mean: 0.0002 	 Max: 0.006 	 Percentage: 9%
+Load Data:
+	Called: 1 times 	 Total: 0.00 	 Mean: 0.0049 	 Max: 0.005 	 Percentage: 1%
+Combine:
+	Called: 2 times 	 Total: 0.00 	 Mean: 0.0014 	 Max: 0.002 	 Percentage: 0%
+Check Subsumed And Covers_Too_Few:
+	Called: 22 times 	 Total: 0.00 	 Mean: 0.0000 	 Max: 0.000 	 Percentage: 0%
+Prune Backtrack Subsumed:
+	Called: 2 times 	 Total: 0.00 	 Mean: 0.0000 	 Max: 0.000 	 Percentage: 0%
+Total operation time: 0.28s
+Total execution time: 0.29s
+
+
+STDERR:
+18:42:00 Generating programs of size: 2
+18:42:00 ********************
+18:42:00 New best hypothesis:
+18:42:00 tp:1 fn:4 tn:5 fp:0 size:2
+18:42:00 sum(V0,V1):- head(V0,V1).
+18:42:00 ********************
+18:42:00 Generating programs of size: 3
+18:42:00 Generating programs of size: 4
+18:42:00 Generating programs of size: 5
+18:42:00 Generating programs of size: 6
+18:42:00 Generating programs of size: 7
+18:42:00 ********************
+18:42:00 New best hypothesis:
+18:42:00 tp:4 fn:1 tn:5 fp:0 size:7
+18:42:00 sum(V0,V1):- head(V0,V1).
+18:42:00 sum(V0,V1):- tail(V0,V4),head(V0,V3),sum(V4,V2),add(V2,V3,V1).
+18:42:00 ********************
+18:42:00 Generating programs of size: 8
+18:42:00 Generating programs of size: 9
+18:42:00 Generating programs of size: 10
+18:42:01 Generating programs of size: 11
+

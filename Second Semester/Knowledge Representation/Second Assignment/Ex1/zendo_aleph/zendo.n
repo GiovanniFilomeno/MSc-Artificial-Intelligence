@@ -1,0 +1,5 @@
+% Negative examples
+zendo(p20).
+zendo(p21).
+zendo(p22).
+zendo(p23).

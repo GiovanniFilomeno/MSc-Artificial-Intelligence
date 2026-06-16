@@ -1,0 +1,21 @@
+max_assignment([4,2,6], 4).
+max_assignment([1,1,1], 0).
+max_assignment([3,5], 3).
+max_assignment([10], 9).
+max_assignment([10,10,5], 5).
+max_assignment([7,3,9,2], 7).
+max_assignment([-1, -3, -2, -1], -2).   % Incorrect negative maximum
+max_assignment([0, -1, -2, -3], -1).     % Incorrect zero or negative mix
+max_assignment([50, 20, 30, 40], 40).    % Incorrect larger numbers
+max_assignment([2, 5, 3, 5, 2], 3).      % Incorrect when max appears multiple times
+max_assignment([12, 15, 14, 13], 14).    % Incorrect middle value
+max_assignment([21], 20).                % Incorrect single element
+max_assignment([99, 101, 100], 100).     % Incorrect with three elements
+max_assignment([6, 6, 6, 6], 5).         % Incorrect all elements same
+max_assignment([-5, 1, -1, 0], 0).       % Incorrect with mixed signs
+max_assignment([100, 200, 300, 400, 500], 400). % Incorrect in ascending order
+max_assignment([500, 400, 300, 200, 100], 400). % Incorrect even though descending
+max_assignment([8, 10, 12, 14, 16, 18, 20, 19, 17, 15, 13, 11, 9], 18). % Long list, incorrect near max
+max_assignment([45, 45, 45, 46, 45], 45).  % Nearly all the same except max
+max_assignment([2, 8, 2, 8, 2, 8, 9], 8).  % Incorrect when one number dominates
+max_assignment([1, 1000, 100, 10], 100).   % Incorrect despite significant range difference
