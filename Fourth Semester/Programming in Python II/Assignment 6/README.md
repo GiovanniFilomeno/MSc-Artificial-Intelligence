@@ -1,15 +1,63 @@
-# Assignment 6 - Air-quality Prediction
+# Air-Quality ML Pipeline and Data Explorer
 
-This assignment is a small applied machine-learning project for PM2.5 prediction using the Beijing Multi-Site Air Quality dataset.
+[Back to Programming in Python II](../README.md) · [Coursework portfolio](../../../README.md)
 
-| Component | What it does | Skills demonstrated |
-| --- | --- | --- |
-| `a6_ex1.py` | Downloads/extracts the dataset, selects a station, cleans missing/out-of-range values, builds a datetime index, and exports `air_quality_cleaned.csv`. | Data ingestion, zip handling, pandas preprocessing, time-indexed data cleaning. |
-| `a6_ex2.py` | Generates exploratory plots for PM2.5 trends, correlations, and histograms. | EDA, Matplotlib plotting, statistical visualization. |
-| `a6_ex3.py` | Splits the cleaned dataset into train/validation/test loaders and saves a scaler. | Feature scaling, temporal splits, PyTorch DataLoader construction. |
-| `a6_ex4.py` | Defines an MLP regressor for PM2.5 prediction. | PyTorch module design, configurable hidden layers, dropout. |
-| `a6_ex5.py` | Trains the model, reports losses, saves weights, and creates prediction plots. | Training loops, validation, test-set prediction, model persistence. |
-| `a6_ex6.py` | Runs a small hyperparameter search over network size, dropout, learning rate, and epochs. | Experiment management, model comparison, result logging. |
-| `app.py` | Application entry point for using the trained model workflow. | Packaging project logic into a runnable app script. |
+This individual coursework project connects data ingestion, time-indexed preprocessing, exploratory analysis, PyTorch regression, hyperparameter experiments, and a Shiny for Python data explorer for Beijing PM2.5 data.
 
-Portfolio takeaway: this assignment is a good applied example because it connects data engineering, exploratory analysis, neural-network regression, model evaluation, and artifact generation in one workflow.
+## System overview
+
+```mermaid
+flowchart LR
+    A["UCI air-quality archive"] --> B["Cleaning and time index"]
+    B --> C["Exploratory analysis"]
+    B --> D["Temporal train / validation / test split"]
+    D --> E["Feature scaling"]
+    E --> F["PyTorch MLP"]
+    F --> G["Recorded experiment results"]
+    B --> H["Shiny data explorer"]
+```
+
+## Recorded experiment
+
+The committed course output contains four MLP configurations:
+
+| Hidden layers | Dropout | Learning rate | Epochs | Validation MSE | Test MSE |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| `(64, 32)` | 0.10 | `1e-3` | 150 | 213.39 | 646.30 |
+| `(128, 64)` | 0.20 | `1e-3` | 200 | 203.74 | **589.64** |
+| `(256, 128)` | 0.10 | `5e-4` | 200 | **203.39** | 626.78 |
+| `(64,)` | 0.00 | `1e-3` | 100 | 232.94 | 633.74 |
+
+The lowest validation MSE belongs to `(256, 128)`. Another configuration has a lower recorded test MSE, but comparing test scores to choose a model would leak test information into model selection. The table is retained as an archival course result, not presented as a production benchmark.
+
+## Main components
+
+| Component | Responsibility |
+| --- | --- |
+| [`a6_ex1.py`](a6_ex1.py) | Download/extraction workflow, station selection, cleaning, and time index. |
+| [`a6_ex2.py`](a6_ex2.py) | Exploratory plots and correlation analysis. |
+| [`a6_ex3.py`](a6_ex3.py) | Temporal splits, scaling, and PyTorch data loaders. |
+| [`a6_ex4.py`](a6_ex4.py) | Configurable multilayer regressor. |
+| [`a6_ex5.py`](a6_ex5.py) | Training, validation, prediction, and artifact persistence. |
+| [`a6_ex6.py`](a6_ex6.py) | Four-configuration experiment loop and result export. |
+| [`app.py`](app.py) | Interactive pollutant visualization for CSV input with a parseable `datetime` column. |
+| [`a6_ex6.txt`](a6_ex6.txt) | Preserved experiment table shown above. |
+
+## Engineering review
+
+The project demonstrates an end-to-end workflow, but the preserved coursework implementation should not be deployed unchanged:
+
+- Missing-value interpolation occurs before the temporal split, so future observations can influence earlier rows.
+- Every configuration is evaluated on the test set instead of reserving it for one final evaluation.
+- The model/scaler feature schema is inferred rather than stored and validated explicitly.
+- The experiment has no naive, linear, or seasonal baseline for context.
+
+The original course dashboard accepted uploaded pickle and model files. The public portfolio edition removes that unsafe deserialization path and keeps model training separate from the CSV visualization interface. Device selection in the experiment script was also made portable across CUDA, Apple MPS, and CPU environments; neither change alters the recorded results above.
+
+These limitations were identified during the public-portfolio review. This refactor documents them rather than retraining the model or retroactively replacing the recorded result.
+
+## Reproducibility notes
+
+The cleaned CSV and source files are retained for inspection, but the original environment was not locked. Reproduction requires Python with pandas, NumPy, scikit-learn, PyTorch, Matplotlib, and Shiny for Python.
+
+A production follow-up should move preprocessing behind the split boundary, select on validation data only, package a trusted model with a versioned schema, and add baseline metrics and tests.

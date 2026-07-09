@@ -17,8 +17,12 @@ from a6_ex4 import PM_Model                 # exercise 4
 # ---------------------------------------------------------------------
 torch.manual_seed(42)
 np.random.seed(42)
-DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-DEVICE = torch.device("mps")
+if torch.cuda.is_available():
+    DEVICE = torch.device("cuda")
+elif torch.backends.mps.is_available():
+    DEVICE = torch.device("mps")
+else:
+    DEVICE = torch.device("cpu")
 # ---------------------------------------------------------------------
 # 1) Preprocessing and DataLoader setup, done only once
 # ---------------------------------------------------------------------

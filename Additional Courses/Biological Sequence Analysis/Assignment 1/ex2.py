@@ -8,7 +8,7 @@
 # Example usage:
 #   python ex2.py input.txt output.txt
 #
-# Author: Giovanni Filomeno [student-id]
+# Author: Giovanni Filomeno
 
 import sys
 import re

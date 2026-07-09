@@ -1,8 +1,5 @@
 # Computability and Complexity
 
-This folder contains theoretical computer-science reporting work.
+This course covered computability, complexity theory, NP-completeness, and Karp reductions.
 
-| Work | What it covers | Skills demonstrated | Repository contents |
-| --- | --- | --- | --- |
-| NP-completeness report | Proving NP-completeness of the Battleship decision problem via Karp reduction. | Formal reductions, complexity-theory reasoning, proof writing, technical communication. | Public repository keeps only the course index; exported reports are omitted. |
-| Course reference material | Computational complexity lecture/reference material. | Theory background and context. | Course-provided PDFs are omitted from the public copy. |
+This folder currently contains only the course overview; the written proof assignment and course reference material are not included in the public portfolio.

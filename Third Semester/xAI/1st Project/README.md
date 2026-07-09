@@ -4,7 +4,7 @@ This project studies reinforcement-learning trajectories from the Cliff Walking 
 
 ## What Was Built
 
-- Generated trajectory data for Sarsa, Q-learning, Expected Sarsa, and a random policy.
+- Analyzed trajectory data for Sarsa, Q-learning, Expected Sarsa, and a random policy.
 - Compared policy behaviour using projected trajectory paths.
 - Explored PCA, ICA, t-SNE, and UMAP as alternative projection techniques.
 - Added metadata to the visualizations so projected paths could be interpreted by algorithm, state, action, reward, and trajectory segment.
@@ -16,11 +16,11 @@ This project studies reinforcement-learning trajectories from the Cliff Walking 
 - Dimensionality reduction for sequential/state-space data.
 - Visual analytics for model and policy behaviour.
 - Jupyter-based exploratory research workflows.
-- Clear separation between source notebooks and generated datasets/plots.
+- Shared utility code and a documented Conda/Docker environment.
 
 ## Repository Notes
 
-The public portfolio copy keeps notebooks and utility code, but omits generated trajectory arrays, cached projections, exported HTML, and presentation artifacts. Re-running the notebooks may regenerate local `data/`, `cache/`, and `export/` folders; those paths are intentionally ignored for GitHub hygiene.
+The public portfolio copy keeps the notebooks, utility code, and environment files. The Cliff Walking trajectory arrays and cached projections are not included, so the main analysis notebook is inspectable but is not self-contained for a clean re-run.
 
 ## Main Files
 

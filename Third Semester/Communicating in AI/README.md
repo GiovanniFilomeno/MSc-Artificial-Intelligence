@@ -1,7 +1,5 @@
 # Communicating in AI
 
-This folder contains written work focused on communicating AI concepts clearly.
+This course focused on communicating AI concepts clearly to broader audiences.
 
-| Work | What it covers | Skills demonstrated | Repository contents |
-| --- | --- | --- | --- |
-| AI literacy report | Communication of AI concepts for broader audiences. | Technical communication, audience-aware writing, AI literacy framing. | Exported report omitted from the public code-focused copy. |
+This folder currently contains only the course overview; the written submission is not included in the public portfolio.

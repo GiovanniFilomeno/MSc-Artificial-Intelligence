@@ -1,39 +1,54 @@
-# Privacy Audit
+# Privacy and Secret-Scanning Notes
 
-This repository is intended to be a public academic portfolio. The only personal name that should remain in portfolio-facing material is `Giovanni Filomeno`.
+This repository is intended for public portfolio review. The spaced public name `Giovanni Filomeno` may appear in portfolio-facing material; joined filename-style variants are treated as potential accidental identifiers by the local privacy scan.
 
-## Scope
+## Automated scope
 
-The privacy pass searched for:
-
-- student identifiers and old submission IDs;
-- non-public filename variants of the owner's name;
-- collaborator names found in old group artifacts;
-- course or staff email addresses embedded in notebooks and generated artifacts;
-- local absolute paths containing the machine username.
-
-Public third-party datasets may still contain real-world names as data values. Those were not treated as collaborator or student identity leaks, because rewriting them would corrupt the assignments.
-
-## Changes Applied
-
-- Renamed notebooks, reports, archives, and submission folders to remove student IDs and non-public naming variants.
-- Redacted identifiers inside Markdown, source files, notebooks, and legacy generated artifacts.
-- Converted local absolute paths in Popper/Aleph and Computer Vision config files to relative paths.
-- Removed generated caches, exported reports, ZIP bundles, model checkpoints, and local datasets that do not belong in a public portfolio repository.
-- Strengthened `.gitignore` to block cache files, generated artifacts, archives, local datasets, and student-ID-like filenames.
-
-## Verification
-
-Run:
+Run the local checks from the repository root:
 
 ```bash
 python3 scripts/privacy_scan.py
+python3 scripts/portfolio_quality.py secrets
 ```
 
-Expected result:
+`privacy_scan.py` checks file paths and readable file contents for:
+
+- JKU-style student identifiers;
+- email addresses;
+- macOS and Windows home-directory paths;
+- non-public filename-style variants of the owner's name;
+- optional private patterns configured locally.
+
+`portfolio_quality.py secrets` checks tracked files and any not-ignored local files for high-confidence private-key and credential formats. Notebook image, audio, and video payloads are excluded from this pattern check to avoid treating coincidental base64 substrings as credentials. Findings report only the path, location, and pattern type; matched values are never printed.
+
+The current sanitized snapshot passes both checks.
+
+## Private local patterns
+
+For identifiers that should not be stored in the public repository, create an untracked `.privacy-patterns` file at the repository root with one case-insensitive byte-regex per line. The root `.gitignore` excludes this file.
+
+Example structure, using placeholders rather than real identifiers:
 
 ```text
-Privacy scan passed. No configured identifiers found.
+# One private byte-regex per line
+PRIVATE_IDENTIFIER_PATTERN
+ANOTHER_PRIVATE_PATTERN
 ```
 
-For a stricter local check, create an untracked `.privacy-patterns` file with one byte-regex per line. The latest pass also checked path names, text-visible content, and byte-level matches for the locally configured identifiers.
+Invalid local regular expressions fail the scan with their line number but do not echo the pattern.
+
+## Important limitations
+
+Passing these checks does not prove that the repository contains no private or restricted information. The checks do not fully inspect:
+
+- images, audio, video, compiled binaries, serialized objects, or compressed archives;
+- the contents of external Google Drive or other shared links;
+- faces, voices, names, or identifiers visible in group-project media;
+- commit-author metadata or copies retained outside the current reachable Git history;
+- every provider-specific credential format.
+
+Review those surfaces manually before promoting the repository. Use a GitHub-provided noreply address for public commits when a personal email address is not intended to be public. If a credential is ever committed, revoke or rotate it first; removing the text from a later commit is not sufficient.
+
+## Public-history boundary
+
+The current GitHub mirror began with a fresh single commit in June 2026. The privacy scan covers the current checkout, including ignored local configuration; the secret scan covers tracked and not-ignored local files. Neither check inspects Git object history. They cannot make guarantees about earlier private repositories, deleted public objects, external caches, local clones, screenshots, or forks.

@@ -1,192 +1,59 @@
 # Course Catalog
 
-This catalog mirrors the academic structure of the repository. The folders remain organized by semester so each assignment can be read in its original course context.
+This catalog maps the MSc curriculum to the artifacts that are actually present in this sanitized public edition. **Topics** summarize the academic scope; **retained evidence** states what a visitor can inspect here. A topic appearing in the curriculum does not imply that every original submission, report, dataset, or model is public.
+
+For the strongest outcome-backed work, start with the [Selected Work evidence map](showcase.md).
 
 ## First Semester
 
-### Deep Learning and Neural Nets I
-
-- Assignment 1: Regression and neural-network utilities.
-- Assignment 2: Multilayer perceptrons.
-- Assignment 3: Convolutional neural networks.
-- Assignment 4: Adaptive optimization.
-- Assignment 5: Regularization, initialization, and normalization.
-
-### LSTM
-
-- Assignment 1: Fully recurrent network introduction.
-- Assignment 2: Fully recurrent network training.
-- Assignment 3: Text processing with LSTMs in PyTorch.
-- Assignment 4: Transformer training in PyTorch.
-
-### Machine Learning - Supervised Learning
-
-- Assignment 0: LaTeX introduction.
-- Assignment 1: k-nearest neighbors.
-- Assignment 2: Gaussian classifiers, bias-variance decomposition, and evaluation measures.
-- Assignment 3: Constrained optimization and SVMs.
-- Assignment 4: Decision trees.
-- Assignment 5: Ensemble methods.
-- Assignment 6: Logistic regression.
-- Assignment 7: Neural networks and PyTorch introduction.
-- Assignment 8: Convolutional neural networks.
-
-### Planning and Reasoning
-
-- Project 1: SAT encoding of a sliding puzzle.
-- Project 2: N-Queens problem encoding.
-
-### TU Reinforcement Learning
-
-- Assignment 0: Introduction.
-- Assignment 1: k-armed bandit problems.
-- Assignment 2: Dynamic programming.
-- Assignment 3: Monte Carlo methods.
-- Assignment 4: Temporal-difference learning.
-- Assignment 5: Policy-gradient methods.
+| Course | Topics covered | Retained public evidence |
+| --- | --- | --- |
+| [Deep Learning and Neural Nets I](<../First Semester/Deep Learning and Neural Nets I>) | Regression, multilayer perceptrons, CNNs, adaptive optimization, regularization, initialization, and normalization. | Assignment notebooks are omitted; selected support utilities, tests, a completed NumPy neural-network module, and requirements remain. |
+| [LSTM](<../First Semester/LSTM>) | Recurrent networks, backpropagation through time, character-level LSTMs, and transformer attention. | **Index only:** restricted assignment notebooks and text corpora are not retained. |
+| [Machine Learning — Supervised Learning](<../First Semester/Machine Learning - Supervised Learning>) | k-NN, Gaussian classification, bias–variance analysis, SVMs, trees, ensembles, logistic regression, neural networks, and CNNs. | Assignment notebooks are omitted; small exercise datasets, loaders, and selected plots remain. |
+| [Planning and Reasoning](<../First Semester/Planning and Reasoning>) | SAT encoding of a sliding puzzle and an SMT-style N-Queens encoding. | Two project notebooks and their text encodings. |
+| [TU Reinforcement Learning](<../First Semester/TU Reinforcement Learning>) | Bandits, dynamic programming, Monte Carlo methods, temporal-difference learning, and policy gradients. | Student-code exercises for dynamic programming through policy gradients, including environments, tests, and expected-output plots; introductory notebooks are omitted. |
 
 ## Second Semester
 
-### Deep Learning II
-
-- Assignment 1: Deep learning with PyTorch.
-- Assignment 2: Vision networks and fast training.
-- Assignment 3: Monitoring, hyperparameters, and efficient CNNs.
-- Assignment 4: Reversing convolutions and variational autoencoders.
-- Assignment 5: Adversarial training.
-- Assignment 6: Normalizing flows.
-- Assignment 7: Bayesian deep learning.
-
-### Deep Reinforcement Learning
-
-- Assignment 1: Imitation learning.
-- Assignment 2: Minigrid DQN training.
-- Assignment 3: Policy-gradient PPO.
-
-### Machine Learning - Unsupervised Learning
-
-- Assignment 1: Estimation theory, Fisher information, and CRLB.
-- Assignment 2: Maximum likelihood.
-- Assignment 3: PCA.
-- Assignment 4: PCA and kernel PCA.
-- Assignment 5: ICA.
-- Assignment 6: Factor analysis.
-- Assignment 7: Scaling and projection methods.
-
-### Theoretical Concepts in Machine Learning
-
-- Assignment 1: Probability theory recap.
-- Assignment 2: Estimation theory.
-- Assignment 3: Probabilistic PCA.
-- Assignment 4: Variational autoencoders.
-- Assignment 5: Statistical learning theory.
-- Assignment 6: ODEs and SDEs.
-- Assignment 7: Diffusion models.
-
-### Stochastic Simulation
-
-- Pseudorandom number generation.
-- Acceptance-rejection and Box-Muller methods.
-- Markov chains.
-- Black-Scholes model simulation.
-- Monte Carlo integration.
-
-### Knowledge Representation
-
-- Logic-based learning and representation assignments.
-- Inductive logic programming exercises using vendored Aleph and Popper tooling.
-
-### Robopsychology
-
-- Written assignments and paper reviews on trust, explainable AI, human behavior, exoskeletons, dehumanization, and human-robot interaction.
+| Course | Topics covered | Retained public evidence |
+| --- | --- | --- |
+| [Deep Learning II](<../Second Semester/Deep Learning II>) | PyTorch vision workflows, monitoring, VAEs, adversarial training, normalizing flows, and Bayesian deep learning. | Index plus a requirements file; restricted assignment notebooks and TensorBoard outputs are not retained. |
+| [Deep Reinforcement Learning](<../Second Semester/Deep Reinforcement>) | Imitation learning, MiniGrid DQN, and PPO continuous control. | An Assignment 1 evaluation helper, the featured MiniGrid DQN notebook and ONNX-oriented evaluator source, and a PPO notebook. No DQN model artifact is published; training reports, logs, and videos are also omitted. |
+| [Machine Learning — Unsupervised Learning](<../Second Semester/Machine Learning - Unsupervised Learning>) | Estimation theory, maximum likelihood, PCA, kernel PCA, ICA, factor analysis, scaling, and projection methods. | Assignment notebooks are omitted; small supporting datasets remain. |
+| [Theoretical Concepts in Machine Learning](<../Second Semester/Theoretical Concepts in ML>) | Probability and estimation, probabilistic PCA, VAEs, learning theory, neural ODEs/SDEs, and diffusion models. | **Index only:** restricted assignment notebooks are not retained. |
+| [Stochastic Simulation](<../Second Semester/Stochastic Simulation>) | Pseudorandom generation, random variates, Markov chains, Black–Scholes simulation, and Monte Carlo integration. | R exercise and simulation scripts; written reports are not retained. |
+| [Knowledge Representation](<../Second Semester/Knowledge Representation>) | Prolog, logic programming, and inductive logic programming with Aleph and Popper. | Prolog/Python exercise sources and output logs, plus clearly third-party Aleph/Popper tooling retained with the coursework. |
+| [Robopsychology](<../Second Semester/Robopsychology>) | Trust, explainability, human behaviour, exoskeletons, dehumanization, and human–robot interaction. | **Index only:** the course overview remains; written assignments are not retained. |
 
 ## Third Semester
 
-### Probabilistic Models
-
-- Exercise 1: Basic probability concepts, joint distributions, probabilistic queries, marginal distributions, inference by enumeration, Bayes' rule, chain rule, independence, and conditional independence.
-- Exercise 2: Approximate inference.
-- Exercise 3: Gibbs sampling and parameter learning.
-- Exercise 4: Structure learning.
-- Exercise 5: Hidden Markov models.
-
-### Computer Vision
-
-- Assignment 1: Image processing basics.
-- Assignment 2: Feature extraction and segmentation.
-- Assignment 3: Optical flow, object tracking, and detection.
-- Assignment 4: 3D reconstruction.
-- Bonus work: Additional computer vision experiments and stack-processing notebooks.
-
-### Explainable AI
-
-- Project 1: Projection-space exploration for sequential state trajectories.
-- Project 2: Model explanations for image classification, including saliency maps, SHAP, and concept-based explanations.
-
-### Computability and Complexity
-
-- Report: Proving NP-completeness of the Battleship decision problem via Karp reduction.
-
-### Communicating in AI
-
-- Written work on AI literacy and communication.
+| Course | Topics covered | Retained public evidence |
+| --- | --- | --- |
+| [Probabilistic Models](<../Third Semester/Probabilistic Models>) | Bayesian networks, approximate inference, Gibbs sampling, parameter learning, structure learning, and hidden Markov models. | Companion notebooks, Python utilities, network implementations, and diagrams across five exercises; primary scaffold notebooks and originals are omitted. |
+| [Computer Vision](<../Third Semester/Computer Vision>) | Image processing, feature extraction, segmentation, optical flow, tracking, detection, and 3D reconstruction. | Assignment 1–3 notebooks and resources, Assignment 4 image resources only, and two bonus notebooks with plots and proof images; the source video and Assignment 4 notebook are omitted. |
+| [Explainable AI](<../Third Semester/xAI>) | Projection-space analysis of RL trajectories and explanations for a CIFAR-10 classifier. | Two project trees with notebooks, utilities, environments, and selected figures. Project 1 is missing generated arrays and referenced figures; Project 2 omits trained weights and large JSON exports. |
+| [Computability and Complexity](<../Third Semester/Computability and Complexity>) | NP-completeness and Karp-reduction work concerning the Battleship decision problem. | **Index only:** the course overview remains; the written proof assignment and reference material are not retained. |
+| [Communicating in AI](<../Third Semester/Communicating in AI>) | AI literacy and audience-aware technical communication. | **Index only:** the course overview remains; the written submission is not retained. |
 
 ## Fourth Semester
 
-### Statistics for AI
-
-- Exercises on statistical concepts, measurements, distributions, modelling, and applied statistical reasoning.
-
-### Learning from User-generated Data
-
-- Assignment 1: Interaction matrices and popularity recommenders.
-- Assignment 2: ItemKNN.
-- Assignment 3: Matrix factorization.
-- Assignment 4: Evaluation with precision, recall, and nDCG.
-- Assignment 5: Evaluation II, popularity calibration, and Jensen-Shannon divergence.
-- Assignment 6: Content-based filtering.
-
-### Programming in Python II
-
-- Assignment 1: Advanced functions and unit tests.
-- Assignment 2: Plotting.
-- Assignment 3: pandas and data analysis.
-- Assignment 4: Web-based application work.
-- Assignment 5: PyTorch basics.
-- Assignment 6: Air-quality prediction with machine learning.
-
-### SAT Programming
-
-- Exercise 1: Tseitin transformation and Limboole.
-- Exercise 2: BCP and DP methods.
-- Exercise 4: Python-based SAT work.
-- Exercise 5: Written SAT exercise.
-- Project: C++ SAT solver implementations with recursive solving, watched literals, CDCL-style solving, and PicoSAT integration.
-
-### Artificial Intelligence in Life Science
-
-- Assignment 1: QSAR and drug activity modelling.
-- Assignment 2: Molecular generation.
-- Assignment 3: Synthesis prediction.
-
-### Stochastic Simulation
-
-- Exercise 1: Pseudorandom number generation and statistical testing.
-- Exercise 2: Random variate generation methods.
-- Exercise 3: Discrete-time stochastic processes.
-- Exercise 4: Continuous-time processes and SDE simulation.
+| Course | Topics covered | Retained public evidence |
+| --- | --- | --- |
+| [Statistics for AI](<../Fourth Semester/Statistics for AI>) | Applied statistical reasoning, distance/statistical exercises, and graph-based analysis. | Exercise 2 and Exercise 4 notebooks with generated plots. Other written exercises described by the course are not retained. |
+| [Learning from User-generated Data](<../Fourth Semester/Learning from User-generated Data>) | Popularity recommenders, item-kNN, matrix factorization, ranking evaluation, calibration, and content-based filtering. | Assignment notebooks are omitted; small course datasets and recommender utility modules remain. |
+| [Programming in Python II](<../Fourth Semester/Programming in Python II>) | Testing, plotting, pandas, web applications, PyTorch basics, and applied air-quality prediction. | Six assignment trees with scripts, tests, selected small data and plots, apps, and featured PM2.5 results. Assignment 3 retains source scripts without its original datasets. |
+| [SAT Programming](<../Fourth Semester/SAT>) | Tseitin transformations, Boolean constraint propagation, DPLL/CDCL concepts, and solver integration. | One exercise notebook and a C++ solver project with source, test formulas, recorded outputs, and PicoSAT source. The custom solver results remain on validation hold and are not featured as performance evidence. |
+| [Artificial Intelligence in Life Science](<../Fourth Semester/Artificial Intelligence in Life Science>) | QSAR/drug activity, molecular generation, and synthesis prediction. | Assignment 2 retains a student LSTM submission; its course demo and evaluation code are omitted. Assignment 3 retains a synthesis-prediction notebook and CSV; no Assignment 1 artifact is retained. |
+| [Stochastic Simulation](<../Fourth Semester/Stochastic Simulation>) | Pseudorandom testing, random-variate generation, discrete-time processes, continuous-time processes, and SDE simulation. | R code and generated plots for Exercises 1–4. |
 
 ## Additional Courses
 
-### Biological Sequence Analysis
+| Course | Topics covered | Retained public evidence |
+| --- | --- | --- |
+| [Biological Sequence Analysis](<../Additional Courses/Biological Sequence Analysis>) | Genomic string algorithms, sequence comparison, substitution matrices, and alignment-based scoring. | Python scripts, small input sequences, and recorded outputs for three assignments. |
+| [Computational Physics](<../Additional Courses/Computational Physics>) | Polynomial interpolation, Fourier transforms, numerical differentiation, and root finding. | Jupyter notebooks for Exercises 1–4. |
 
-- Assignment 1: String algorithms and pattern matching in genomic sequences.
-- Assignment 2: Sequence comparison and substitution matrices.
-- Assignment 3: Gene-expression simulation and alignment-based scoring.
+## Reading the Archive
 
-### Computational Physics
-
-- Exercise 1: Polynomial interpolation.
-- Exercise 2: Fourier transforms.
-- Exercise 3: Differentiation.
-- Exercise 4: Root finding.
+Course and assignment folders preserve their academic structure and may include instructor scaffolding, third-party material, or generated outputs alongside authored work. Use [Selected Work](showcase.md) when ownership, retained evidence, and recorded outcomes matter more than curriculum breadth.

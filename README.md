@@ -1,53 +1,75 @@
-# MSc Artificial Intelligence Coursework Portfolio
+# Giovanni Filomeno — AI/ML Engineering Portfolio
 
-This repository is a portfolio archive of my MSc in Artificial Intelligence at Johannes Kepler University Linz (JKU). It collects assignments, implementation projects, reports, notebooks, and experiments across machine learning, deep learning, reinforcement learning, computer vision, explainable AI, probabilistic modelling, SAT solving, recommender systems, AI for life sciences, and stochastic simulation.
+MSc Artificial Intelligence coursework at Johannes Kepler University Linz (JKU).
 
-The original semester-by-semester structure is preserved so the academic context stays clear. This README and the `docs/` folder provide the curated GitHub layer for visitors who want to understand the work quickly.
+I build and evaluate machine-learning systems across deep reinforcement learning, model interpretability, and applied ML. This repository is the public, curated edition of my MSc coursework: featured projects are presented first, while a semester-by-semester curriculum map and the strongest remaining artifacts provide academic context.
 
-## Portfolio Highlights
+## Featured Projects
 
-| Area | Representative work | What it demonstrates |
-| --- | --- | --- |
-| SAT solving and symbolic AI | [SAT Programming Project](<Fourth Semester/SAT/Project>) | C++17 implementations of recursive solving, watched literals, CDCL-style solving, DIMACS-style parsing, and PicoSAT integration. |
-| Explainable AI | [Projection Space Exploration](<Third Semester/xAI/1st Project>) and [Model Explanations](<Third Semester/xAI/2nd Project>) | Trajectory analysis, dimensionality reduction, saliency maps, SHAP, and concept-based explanations for neural models. |
-| Deep reinforcement learning | [Imitation Learning](<Second Semester/Deep Reinforcement/Assgnment 1>), [Minigrid DQN](<Second Semester/Deep Reinforcement/Assignment 2>), and [PPO](<Second Semester/Deep Reinforcement/Assignment 3>) | Policy learning, value-based control, imitation learning, evaluation scripts, and trained model artifacts. |
-| Computer vision | [Computer Vision Assignments](<Third Semester/Computer Vision>) | Image processing, segmentation, optical flow, object tracking, detection, and 3D reconstruction. |
-| Deep learning | [Deep Learning II](<Second Semester/Deep Learning II>) and [LSTM](<First Semester/LSTM>) | PyTorch workflows for CNNs, VAEs, adversarial training, normalizing flows, Bayesian deep learning, recurrent networks, and transformers. |
-| Recommender systems | [Learning from User-generated Data](<Fourth Semester/Learning from User-generated Data>) | Popularity baselines, item-kNN, matrix factorization, evaluation metrics, calibration, and content-based filtering. |
-| AI in life sciences | [Artificial Intelligence in Life Science](<Fourth Semester/Artificial Intelligence in Life Science>) | QSAR modelling, molecular generation, synthesis prediction, and scientific ML reporting. |
-| Statistical and probabilistic AI | [Probabilistic Models](<Third Semester/Probabilistic Models>), [Statistics for AI](<Fourth Semester/Statistics for AI>), and [Stochastic Simulation](<Fourth Semester/Stochastic Simulation>) | Probabilistic inference, sampling, statistical modelling, simulation, Monte Carlo methods, and stochastic processes. |
+### MiniGrid DQN — Deep Reinforcement Learning
 
-For a more curated tour, see [Selected Work](docs/showcase.md). For the full academic map, see [Course Catalog](docs/course-catalog.md).
+Implemented a value-based agent for the partially observable MiniGrid DoorKey environment, including replay memory, epsilon-greedy exploration, online and target networks, and soft target updates. The executed training notebook records a 50-episode rolling average score of **0.94 from episode 700 onward**.
 
-## Repository Map
+- **Evidence:** [project files](<Second Semester/Deep Reinforcement/Assignment 2>) · [executed training notebook](<Second Semester/Deep Reinforcement/Assignment 2/Minigrid_DQN_exercise_2024.ipynb>) · [evaluation script](<Second Semester/Deep Reinforcement/Assignment 2/minigrid_eval.py>)
+- **Stack:** Python, PyTorch, Gymnasium, MiniGrid, NumPy, ONNX evaluation
+- **Scope:** Coursework implementation. The reported score is the rolling training result stored in the notebook, not a newly reproduced benchmark. The ONNX-oriented evaluator is retained as source, but no compatible model artifact is published.
 
-| Folder | Contents |
+### Explaining a CIFAR-10 Classifier — Explainable AI
+
+Analyzed a custom CNN with four complementary explanation approaches: saliency maps, SHAP, invertible concept-based explanations, and InstanceFlow. The project reports **82.59% CIFAR-10 test accuracy** and uses the explanations to investigate class confusion, learned visual concepts, and training-time prediction behavior.
+
+- **Evidence:** [project files](<Third Semester/xAI/2nd Project>) · [executed analysis notebook](<Third Semester/xAI/2nd Project/submission-notebook.ipynb>) · [project report](<Third Semester/xAI/2nd Project/README.md>)
+- **Stack:** Python, PyTorch, CIFAR-10, SHAP, non-negative matrix factorization, visual analytics
+- **Scope:** Four-person JKU team project. The public report records Giovanni Filomeno's contribution as **25%**; it does not preserve a more detailed task-level attribution.
+
+### PM2.5 Prediction and Air-Quality Explorer — Applied ML
+
+Built an end-to-end workflow around the Beijing Multi-Site Air Quality dataset: download and cleaning, time-aware splitting, exploratory analysis, feature scaling, PyTorch regression, hyperparameter experiments, and an interactive Shiny data explorer. Across the four recorded configurations, the lowest validation MSE is **203.39**; that validation-selected configuration has a recorded test MSE of **626.78**.
+
+- **Evidence:** [project overview](<Fourth Semester/Programming in Python II/Assignment 6/README.md>) · [source and artifacts](<Fourth Semester/Programming in Python II/Assignment 6>) · [recorded experiment table](<Fourth Semester/Programming in Python II/Assignment 6/a6_ex6.txt>)
+- **Stack:** Python, pandas, scikit-learn, PyTorch, Matplotlib, Shiny
+- **Scope:** Coursework implementation. A different configuration has the lowest post-hoc test MSE, but it is not promoted as the selected model because choosing on test results would leak test information. No production or state-of-the-art claim is made.
+
+## Research Highlight
+
+### Projection-Space Exploration of RL Trajectories
+
+Compared PCA, ICA, t-SNE, and UMAP for visualizing trajectories from Sarsa, Q-learning, Expected Sarsa, and a random policy in Cliff Walking. The analysis samples **1,000 episodes per policy** and reports that UMAP provided the most useful balance of local and global structure for this visualization task.
+
+- **Evidence:** [project overview](<Third Semester/xAI/1st Project/README.md>) · [analysis notebook](<Third Semester/xAI/1st Project/A1_submission_notebook.ipynb>)
+- **Artifact note:** The public copy retains the analysis and utility code, but not every generated dataset or rendered figure referenced by the notebook. It is therefore presented as a research highlight rather than as one of the three primary reproducible examples.
+
+For a concise evidence and ownership map, see [Selected Work](docs/showcase.md).
+
+## Retained Technical Evidence
+
+| Capability | Evidence in this repository |
 | --- | --- |
-| [First Semester](<First Semester>) | Foundations in supervised learning, neural networks, LSTMs, planning and reasoning, and reinforcement learning. |
-| [Second Semester](<Second Semester>) | Advanced deep learning, deep reinforcement learning, unsupervised learning, theoretical ML, stochastic simulation, knowledge representation, and human-centered AI coursework. |
+| Deep learning and reinforcement learning | Executed DQN training, a PPO coursework notebook, NumPy neural-network components, CNN explanation workflows, and PyTorch regression. |
+| Explainability and visual analytics | Saliency, SHAP, concept-based explanations, dimensionality reduction, trajectory analysis, and model-behavior visualization. |
+| Applied ML engineering | Data ingestion and cleaning, temporal splitting, feature scaling, experiment comparison, evaluation, and interactive application development. |
+| Statistical and symbolic foundations | Bayesian-network utilities and notebooks, stochastic-simulation code, recommender modules, Prolog/ILP work, and SAT/SMT source—with the custom SAT solvers explicitly held from performance claims. |
+
+## Coursework Archive
+
+The retained material follows the original academic structure so that artifacts can be inspected in course context.
+
+| Period | Coverage |
+| --- | --- |
+| [First Semester](<First Semester>) | Supervised learning, neural-network foundations, sequence models, planning and reasoning, and reinforcement learning. |
+| [Second Semester](<Second Semester>) | Advanced deep learning, deep reinforcement learning, unsupervised and theoretical ML, stochastic simulation, and knowledge representation. |
 | [Third Semester](<Third Semester>) | Probabilistic models, computer vision, explainable AI, computability and complexity, and AI communication. |
-| [Fourth Semester](<Fourth Semester>) | Statistics for AI, recommender systems, Python engineering, SAT programming, AI for life sciences, and stochastic simulation. |
+| [Fourth Semester](<Fourth Semester>) | Statistics, recommender systems, Python engineering, SAT programming, life-science AI, and stochastic simulation. |
 | [Additional Courses](<Additional Courses>) | Biological sequence analysis and computational physics. |
-| [docs](docs) | Public-facing portfolio notes, course catalog, and repository hygiene guidance. |
 
-## Technical Stack
+Use the [Course Catalog](docs/course-catalog.md) for the complete assignment-level map. The catalog documents curriculum breadth; the featured projects above are the recommended starting point for evaluating retained implementation and analytical work.
 
-The coursework spans Python, Jupyter, PyTorch, NumPy, pandas, scikit-learn, Matplotlib, C++17, SAT/SMT tooling, probabilistic modelling utilities, recommender-system pipelines, and scientific reporting workflows.
+## Public-Edition and Validation Notes
 
-## How To Browse
+This is a sanitized public edition of an academic working repository. Student identifiers and private submission metadata were removed, and some original datasets, reports, generated outputs, checkpoints, or course-specific dependencies are not included. Individual folders may therefore be inspectable without being fully reproducible as standalone packages.
 
-Start with [Selected Work](docs/showcase.md) if you are evaluating the portfolio. Use [Course Catalog](docs/course-catalog.md) if you want a semester-by-semester view of the MSc curriculum. Individual assignment folders usually contain the submitted notebook, report, source code, data artifacts, or model artifacts needed for that specific exercise.
+The C++ SAT solver coursework remains in the archive, but it is **deliberately excluded from featured work** while cross-solver correctness discrepancies are being resolved and validated against a reference solver. Portfolio claims should be based on verified behavior, so no performance claim is made for that project here.
 
-Some notebooks depend on the original course environments and datasets. Where possible, code, reports, and outputs are kept together to make the reasoning and results inspectable even when the exact environment is not reproduced.
+## Rights, Attribution, and Reuse
 
-## Repository Hygiene
-
-This repository is an academic archive rather than a single production package. It contains notebooks, reports, datasets, trained models, exported submissions, and generated outputs. The `.gitignore` and `.gitattributes` files are configured to keep future generated artifacts cleaner and to make GitHub language statistics less noisy.
-
-See [Repository Hygiene](docs/repository-hygiene.md) for the current size notes, large-artifact guidance, and suggested steps before publishing a lean public mirror.
-
-## Academic Integrity And Reuse
-
-The work is shared as a portfolio and learning archive. Course prompts, third-party datasets, papers, libraries, and assignment templates remain under their original ownership and licenses. Please do not submit this material as your own coursework.
-
-See [Notice](NOTICE.md) for reuse and third-party material notes.
+Course prompts, templates, third-party datasets, papers, and external libraries remain under their original ownership and licenses. Authored code and analysis are shared for portfolio review and learning; please do not submit this material as your own coursework. See [NOTICE.md](NOTICE.md) for additional attribution and reuse notes.

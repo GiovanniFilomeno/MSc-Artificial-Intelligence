@@ -1,170 +1,123 @@
 from __future__ import annotations
-import matplotlib.dates as mdates
 
 from pathlib import Path
-from typing import List, Tuple, Optional
-import pickle
+from typing import List, Optional
 
-import pandas as pd
-import numpy as np
-import torch
+import matplotlib.dates as mdates
 import matplotlib.pyplot as plt
+import pandas as pd
 from shiny import App, reactive, render, ui
 from shiny.types import FileInfo
 
-# -----------------------------------------------------------------------------
-# UI --------------------------------------------------------------------------
-# -----------------------------------------------------------------------------
+
 sidebar = ui.sidebar(
-    ui.input_file("csv_file", "Upload data file", multiple=False, accept={"text/csv": ".csv"}),
+    ui.input_file(
+        "csv_file",
+        "Upload an air-quality CSV",
+        multiple=False,
+        accept={"text/csv": ".csv"},
+    ),
     ui.hr(),
-    ui.output_ui("sidebar_controls"),  # viene popolato dopo l'upload
+    ui.output_ui("sidebar_controls"),
     width="300px",
 )
 
 app_ui = ui.page_sidebar(
     sidebar,
-    ui.h2("Air Quality Dashboard"),
+    ui.h2("Air-Quality Explorer"),
+    ui.markdown(
+        "Inspect pollutant measurements over time and apply a rolling mean. "
+        "Model training and evaluation remain separate from this public dashboard."
+    ),
     ui.output_plot("pollution_plot", height="600px"),
 )
 
-# -----------------------------------------------------------------------------
-# SERVER ----------------------------------------------------------------------
-# -----------------------------------------------------------------------------
 
 def server(input, output, session):
-    # 1) carica CSV -----------------------------------------------------------
     @reactive.Calc
     def df_raw() -> Optional[pd.DataFrame]:
-        uploaded: List[FileInfo] = input.csv_file()
+        uploaded: Optional[List[FileInfo]] = input.csv_file()
         if not uploaded:
             return None
-        tmp = Path(uploaded[0]["datapath"])
-        df = pd.read_csv(tmp, parse_dates=["datetime"]).set_index("datetime")
-        return df
 
-    # 2) genera dinamicamente i controlli sidebar -----------------------------
+        upload_path = Path(uploaded[0]["datapath"])
+        frame = pd.read_csv(upload_path)
+        if "datetime" not in frame.columns:
+            raise ValueError("The CSV must contain a 'datetime' column.")
+
+        frame["datetime"] = pd.to_datetime(frame["datetime"], errors="raise")
+        return frame.set_index("datetime").sort_index()
+
     @output
     @render.ui
     def sidebar_controls():
-        df = df_raw()
-        if df is None:
-            return ui.markdown("Upload a **csv** data file to continue")
+        frame = df_raw()
+        if frame is None:
+            return ui.markdown("Upload a **CSV** file to begin.")
 
-        pollutant_cols = [
-            c
-            for c in df.columns
-            if df[c].dtype != "O" and c not in {"hour", "month", "dayofweek", "is_weekend"}
+        measurement_columns = [
+            column
+            for column in frame.select_dtypes(include="number").columns
+            if column not in {"hour", "month", "dayofweek", "is_weekend"}
         ]
+        if not measurement_columns:
+            return ui.markdown("The uploaded file has no numeric measurement columns.")
 
+        default = "PM2.5" if "PM2.5" in measurement_columns else measurement_columns[0]
         return ui.TagList(
             ui.input_selectize(
                 "pollutants",
-                "Select Pollutants",
-                choices=pollutant_cols,
-                selected=["PM2.5"] if "PM2.5" in pollutant_cols else pollutant_cols[:1],
+                "Select numeric series",
+                choices=measurement_columns,
+                selected=[default],
                 multiple=True,
             ),
-            ui.input_slider("smooth_window", "Smoothing window (days)", min=1, max=30, value=1),
-            ui.input_checkbox("show_pred", "Show PM2.5 Prediction", value=False),
-            ui.panel_conditional(
-                "input.show_pred == true",
-                ui.markdown("Upload scaler and weight files to show predictions."),
-                ui.input_file("scaler_file", "Upload scaler (.pkl)"),
-                ui.input_file("weights_file", "Upload weights (.pt)"),
+            ui.input_slider(
+                "smooth_window",
+                "Smoothing window (days)",
+                min=1,
+                max=30,
+                value=1,
             ),
         )
 
-    # 3) carica modello + scaler se richiesto ---------------------------------
-    @reactive.Calc
-    def model_and_scaler() -> Tuple[Optional[torch.nn.Module], Optional[object]]:
-        if not input.show_pred():
-            return None, None
-        if not input.scaler_file() or not input.weights_file():
-            return None, None
-
-        # scaler --------------------------------------------------------------
-        scaler_path = Path(input.scaler_file()[0]["datapath"])
-        with open(scaler_path, "rb") as f:
-            scaler = pickle.load(f)
-
-        # modello -------------------------------------------------------------
-        from a6_ex4 import PM_Model  # import locale
-
-        state_dict_path = Path(input.weights_file()[0]["datapath"])
-        state_dict = torch.load(state_dict_path, map_location="cpu")
-
-        n_features = int(scaler.mean_.shape[0])
-        # deduci hidden layer sizes: prendi tutte le weight matrix tranne l'ultima (output)
-        lin_sizes = [w.shape[0] for name, w in state_dict.items() if name.endswith("weight")]
-        hidden_sizes = tuple(lin_sizes[:-1]) or (64, 32)
-
-        model = PM_Model(in_features=n_features, hidden_layers=hidden_sizes)
-        model.load_state_dict(state_dict)
-        model.eval()
-        return model, scaler
-
-    # 4) plot ------------------------------------------------------------------
     @output
     @render.plot
     def pollution_plot():
-        df = df_raw()
-        if df is None:
-            fig, ax = plt.subplots(figsize=(8, 4))
-            ax.text(0.5, 0.5, "Upload a CSV to display data", ha="center", va="center")
-            ax.axis("off")
-            return fig
+        frame = df_raw()
+        if frame is None:
+            figure, axis = plt.subplots(figsize=(8, 4))
+            axis.text(0.5, 0.5, "Upload a CSV to display data", ha="center", va="center")
+            axis.axis("off")
+            return figure
 
         pollutants = input.pollutants() or []
-        window = input.smooth_window()
-        show_pred = input.show_pred()
-
         if not pollutants:
-            fig, ax = plt.subplots(figsize=(8, 4))
-            ax.text(0.5, 0.5, "Select at least one pollutant", ha="center", va="center")
-            ax.axis("off")
-            return fig
+            figure, axis = plt.subplots(figsize=(8, 4))
+            axis.text(0.5, 0.5, "Select at least one pollutant", ha="center", va="center")
+            axis.axis("off")
+            return figure
 
-        fig, ax = plt.subplots(figsize=(10, 5))
+        window_days = input.smooth_window()
+        figure, axis = plt.subplots(figsize=(10, 5))
         colors = plt.rcParams["axes.prop_cycle"].by_key()["color"]
-        for i, col in enumerate(pollutants):
-            series = df[col].rolling(window * 24, min_periods=1).mean()
-            ax.plot(series.index, series.values, label=col, color=colors[i % len(colors)])
 
-        # overlay predizione --------------------------------------------------
-        if show_pred and "PM2.5" in pollutants:
-            model, scaler = model_and_scaler()
-            if model is not None and scaler is not None:
-                feat_cols = (
-                    df.select_dtypes(include=[np.number])
-                    .drop(columns=["PM2.5"], errors="ignore")
-                    .columns
-                )
-                X = df[feat_cols].values.astype(np.float32)
-                X_scaled = scaler.transform(X)
-                with torch.no_grad():
-                    y_pred = model(torch.from_numpy(X_scaled)).squeeze().numpy()
-                pred = pd.Series(y_pred, index=df.index).rolling(window * 24, 1).mean()
-                ax.plot(
-                    pred.index,
-                    pred.values,
-                    label="PM2.5 (Predicted)",
-                    linestyle="--",
-                    color="black",
-                    alpha=0.7,
-                )
+        for index, column in enumerate(pollutants):
+            series = frame[column].rolling(f"{window_days}D", min_periods=1).mean()
+            axis.plot(
+                series.index,
+                series.values,
+                label=column,
+                color=colors[index % len(colors)],
+            )
 
-        ax.set_title("Pollution Levels")
-        ax.set_xlabel("datetime")
-        ax.set_ylabel("Value")
-        ax.legend()
-        # fig.autofmt_xdate()
-        ax.xaxis.set_major_formatter(mdates.DateFormatter("%b-%Y"))  
+        axis.set_title("Air-quality measurements")
+        axis.set_xlabel("Date")
+        axis.set_ylabel("Measured value")
+        axis.xaxis.set_major_formatter(mdates.DateFormatter("%b-%Y"))
+        axis.legend()
+        figure.tight_layout()
+        return figure
 
-        fig.tight_layout()
-        return fig
 
-# -----------------------------------------------------------------------------
-# APP -------------------------------------------------------------------------
-# -----------------------------------------------------------------------------
 app = App(app_ui, server)

@@ -4,6 +4,6 @@ This course applies deep learning to reinforcement-learning problems, including 
 
 | Assignment | What it covers | Skills demonstrated | Repository contents |
 | --- | --- | --- | --- |
-| [Assignment 1](<Assgnment 1>) | Imitation learning from recorded trajectories. | Behaviour cloning, dataset handling, policy evaluation, large trajectory artifacts. | `drl-01-imitation-learning.ipynb`, `eval_imitation_learning.py` |
-| [Assignment 2](<Assignment 2>) | Minigrid DQN training and evaluation. | Replay buffers, value-based deep RL, ONNX/model evaluation, Gymnasium environments. | `Minigrid_DQN_exercise_2024.ipynb`, `minigrid_eval.py`, reports and model artifacts |
-| [Assignment 3](<Assignment 3>) | PPO and policy-gradient reinforcement learning. | Actor-critic reasoning, continuous-control workflows, experiment reporting. | Source notebook/code; exported report omitted. |
+| [Assignment 1](<Assignment 1>) | Imitation learning from recorded trajectories. | Behaviour cloning, dataset handling, policy evaluation. | `eval_imitation_learning.py`; protected course notebook omitted |
+| [Assignment 2](<Assignment 2>) | MiniGrid DQN training and evaluation. | Replay buffers, value-based deep RL, model evaluation, Gymnasium environments. | Executed training notebook and ONNX-oriented evaluation script; no model artifact is published |
+| [Assignment 3](<Assignment 3>) | PPO and policy-gradient reinforcement learning. | Actor-critic reasoning and continuous-control workflows. | `2024_Challenge_RL_PolicyGradients_PPO_Continuous_Exercise.ipynb` |

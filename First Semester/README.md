@@ -2,7 +2,7 @@
 
 The first semester builds the technical foundation: supervised learning, neural-network implementation, sequence models, logic-based problem encoding, and core reinforcement learning.
 
-| Course | Portfolio value |
+| Course | Technical coverage |
 | --- | --- |
 | [Deep Learning and Neural Nets I](<Deep Learning and Neural Nets I>) | Neural-network fundamentals, NumPy-based implementation, CNNs, optimization, regularization, initialization, and normalization. |
 | [LSTM](LSTM) | Recurrent neural networks, sequence modelling, LSTMs, PyTorch datasets, and transformer attention. |

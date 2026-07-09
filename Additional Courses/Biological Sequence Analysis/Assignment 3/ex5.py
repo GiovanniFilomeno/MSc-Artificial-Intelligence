@@ -92,7 +92,7 @@ def write_output(results, out_path):
 # Main
 def main():
     if len(sys.argv) != 3:
-        print("Usage: ex05_[student-id].py <input_file> <output_file>")
+        print("Usage: ex5.py <input_file> <output_file>")
         sys.exit(1)
 
     input_file, output_file = sys.argv[1], sys.argv[2]

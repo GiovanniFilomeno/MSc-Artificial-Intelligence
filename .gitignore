@@ -1,0 +1,106 @@
+# Operating systems and editors
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Local privacy and environment configuration
+.privacy-patterns
+.env
+.env.*
+!.env.example
+.python-version
+
+# Python and Jupyter
+__pycache__/
+*.py[cod]
+*$py.class
+.ipynb_checkpoints/
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.tox/
+.nox/
+.cache/
+.jupyter_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# R session state
+.RData
+.Rhistory
+.Rproj.user/
+.Renviron
+
+# Generated experiment output
+run/
+runs/
+logdir/
+logs/
+outputs/
+artifacts/
+events.out.tfevents.*
+*.log
+wandb/
+mlruns/
+lightning_logs/
+
+# Model and checkpoint artifacts
+checkpoints/
+*.ckpt
+*.pt
+*.pth
+*.p
+*.pkl
+*.pickle
+*.joblib
+*.onnx
+*.h5
+*.hdf5
+*.safetensors
+*.gguf
+*.id_musicnn
+*.npy
+*.npz
+
+# Native build output
+build/
+dist/
+*.o
+*.obj
+*.a
+*.so
+*.dylib
+*.dll
+*.exe
+a.out
+satsolve
+
+# Archives and notebook exports
+*.7z
+*.gz
+*.rar
+*.tar
+*.tgz
+*.zip
+*.nb.html
+*_files/
+
+# Course-provided and generated portfolio exclusions
+**/Original/
+**/prof/
+Fourth Semester/Artificial Intelligence in Life Science/Assignment 2/evaluation/
+Third Semester/xAI/1st Project/template.ipynb
+Third Semester/xAI/2nd Project/iflowcifar10_*.json
+Third Semester/Computer Vision/Assignment 3/resources/vtest.avi
+Fourth Semester/Programming in Python II/Assignment 3/*.csv
+Fourth Semester/Programming in Python II/Assignment 3/*.xls
+Fourth Semester/Programming in Python II/Assignment 3/*.xlsx
+Additional Courses/Biological Sequence Analysis/Assignment 1/chr22.txt

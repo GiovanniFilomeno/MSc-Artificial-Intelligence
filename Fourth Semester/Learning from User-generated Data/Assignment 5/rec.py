@@ -25,8 +25,6 @@ def inter_matr_implicit(users: pd.DataFrame,
 
     res = None
 
-    # TODO: YOUR IMPLEMENTATION
-
     interactions = interactions.copy()
 
     # getting number of users and items from the respective files to be on the safe side
@@ -73,8 +71,6 @@ def recTopKPop(inter_matr: np.ndarray,
 
     top_pop = None
 
-    # TODO: YOUR IMPLEMENTATION
-
     # global item-popularity distribution:
     item_pop = inter_matr.sum(axis=0)
 
@@ -104,8 +100,6 @@ def svd_decompose(inter_matr: np.ndarray, f: int = 50) -> (np.ndarray, np.ndarra
 
     U_final = None
     V_final = None
-
-    # TODO: YOUR IMPLEMENATION.
 
     U, s, Vh = np.linalg.svd(inter_matr, full_matrices=False)
     U_final = U[:, :f] @ np.diag(s[:f] ** 0.5)  # users x features
@@ -145,8 +139,6 @@ def jaccard_score(a: np.ndarray, b: np.ndarray) -> float:
     """
     score = None
 
-    # TODO: YOUR IMPLEMENTATION
-
     # form union over a and b by summing both vectors
     c = a + b
     # value in union > 1 means user was present in both item vectors -> intersection
@@ -173,8 +165,6 @@ def calculate_sim_scores(similarity_measure: Callable[[np.ndarray, np.ndarray], 
     """
 
     item_similarities = None
-
-    # TODO: YOUR IMPLEMENTATION
 
     item_similarities = np.zeros((inter.shape[1],))
 
@@ -203,8 +193,6 @@ def get_user_item_score(sim_scores_calculator: Callable[[Callable, np.array, np.
     """
 
     item_similarities_mean = None
-
-    # TODO: YOUR IMPLEMENTATION.
 
     inter_pred = inter.copy()
 
@@ -269,8 +257,6 @@ def _recTopK_base(user_item_scorer: Callable[[Callable, np.array, int, int], flo
 
     top_rec = None
     scores = None
-
-    # TODO: YOUR IMPLEMENTATION.
 
     scores = np.zeros((inter_matr.shape[1],))
 

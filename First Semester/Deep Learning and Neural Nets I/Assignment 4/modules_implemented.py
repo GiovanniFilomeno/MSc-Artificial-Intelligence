@@ -41,8 +41,6 @@ class Linear(Module):
         self.use_bias = use_bias
         
         # register parameters 'w' and 'b' here (mind use_bias!)
-        # YOUR CODE HERE
-        # raise NotImplementedError()
 
         # Register parameter w
         self.register_parameter('w', Parameter(np.empty((in_features, out_features))))
@@ -77,8 +75,6 @@ class Linear(Module):
         s : (N, K) ndarray
         cache : ndarray or iterable of ndarrays
         """
-        # YOUR CODE HERE
-        # raise NotImplementedError()
         s = x @ self.w
         if self.use_bias:
             s = s + self.b
@@ -97,8 +93,6 @@ class Linear(Module):
         -------
         dx : (N, D) ndarray
         """
-        # YOUR CODE HERE
-        # raise NotImplementedError()
 
         x = cache
         dx = grads @ self.w.T
@@ -143,8 +137,6 @@ class Sequential(Container):
         y : (N, K) ndarray
         cache : ndarray or iterable of ndarrays
         """
-        # YOUR CODE HERE
-        # raise NotImplementedError()
 
         caches = []
         for module in self._modules:
@@ -165,8 +157,6 @@ class Sequential(Container):
         -------
         dx : (N, D) ndarray
         """
-        # YOUR CODE HERE
-        # raise NotImplementedError()
 
         for module, cache in zip(reversed(self._modules), reversed(cache)):
             grads = module.compute_grads(grads, cache)
@@ -193,8 +183,6 @@ class LogitCrossEntropy(LossFunction):
         cross_entropy : (N, ) ndarray
         cache : ndarray or iterable of ndarrays
         """
-        # YOUR CODE HERE
-        # raise NotImplementedError()
         # compute the softmax of the logits in a numerically stable way
         exps = np.exp(logits - np.max(logits, axis=1, keepdims=True))
         probs = exps / np.sum(exps, axis=1, keepdims=True)
@@ -221,8 +209,6 @@ class LogitCrossEntropy(LossFunction):
         dlogits : (N, K) ndarray
         dtargets : (N, K) ndarray
         """
-        # YOUR CODE HERE
-        # raise NotImplementedError()
         # retrieve the cached values
         probs, targets = cache
         
@@ -253,8 +239,6 @@ def multi_channel_convolution2d(x, k):
     sig2col : can be used to convert (N, Ci, A, B) ndarray 
               to (N, Ci, A', B', R1, R2) ndarray.
     """
-    # YOUR CODE HERE
-    # raise NotImplementedError()
 
     # Get dimensions
     N, Ci, A, B = x.shape
@@ -286,8 +270,6 @@ class Conv2d(Module):
         self.use_bias = use_bias
         
         # create parameters 'w' and 'b'
-        # YOUR CODE HERE
-        # raise NotImplementedError()
 
         # Initialize parameters 'w' and 'b'
         self.register_parameter('w', np.random.randn(out_channels, in_channels, *kernel_size))
@@ -322,8 +304,6 @@ class Conv2d(Module):
         feature_maps : (N, Co, H', W') ndarray
         cache : ndarray or tuple of ndarrays
         """
-        # YOUR CODE HERE
-        # raise NotImplementedError()
 
         feature_maps = multi_channel_convolution2d(x, self.w)
         if self.use_bias:
@@ -390,8 +370,6 @@ class MaxPool2d(Module):
         a : (N, C, H', W') ndarray
         cache : ndarray or tuple of ndarrays
         """
-        # YOUR CODE HERE
-        # raise NotImplementedError()
 
         N, C, H, W = x.shape
         pool_h, pool_w = self.kernel_size
@@ -427,7 +405,6 @@ class MaxPool2d(Module):
         -------
         dx : (N, C, H, W) ndarray
         """
-        # YOUR CODE HERE
 
         x, max_idx, (pool_h, pool_w) = cache
         N, C, H, W = x.shape
@@ -465,8 +442,6 @@ class Identity(Module):
         a : (N, K) ndarray
         cache : ndarray or iterable of ndarrays
         """
-        # YOUR CODE HERE
-        # raise NotImplementedError()
         return s, s
     
     def compute_grads(self, grads, cache):
@@ -480,8 +455,6 @@ class Identity(Module):
         -------
         ds : (N, K) ndarray
         """
-        # YOUR CODE HERE
-        # raise NotImplementedError()
         return grads
 
 
@@ -499,8 +472,6 @@ class Tanh(Module):
         a : (N, K) ndarray
         cache : ndarray or iterable of ndarrays
         """
-        # YOUR CODE HERE
-        # raise NotImplementedError()
         a = np.tanh(s)
         return a, s
     
@@ -515,8 +486,6 @@ class Tanh(Module):
         -------
         ds : (N, K) ndarray
         """
-        # YOUR CODE HERE
-        # raise NotImplementedError()
         s = cache
         a = np.tanh(s)
         ds = grads * (1 - a**2)
@@ -537,8 +506,6 @@ class AlgebraicSigmoid(Module):
         a : (N, K) ndarray
         cache : ndarray or iterable of ndarrays
         """
-        # YOUR CODE HERE
-        # raise NotImplementedError()
         a = s / np.sqrt(1 + s**2)
         return a, s
 
@@ -553,8 +520,6 @@ class AlgebraicSigmoid(Module):
         -------
         ds : (N, K) ndarray
         """
-        # YOUR CODE HERE
-        # raise NotImplementedError()
         a = cache
         ds = grads * (1 / (1 + a**2)**(3/2))
         return ds

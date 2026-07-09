@@ -1,53 +1,59 @@
 # Repository Hygiene
 
-This repository is intentionally kept as an academic portfolio rather than a raw submission dump. The public copy keeps source code, notebooks, project READMEs, and small support files; generated reports, submission archives, large datasets, caches, and trained model checkpoints are omitted.
+This repository is an academic portfolio mirror, not a single deployable software package. Its semester structure preserves academic context, while the root README and `docs/` provide the curated entry points.
 
-## Current Scale
+## Current state
 
-- The working tree has been pruned to source-first material.
-- The Git history may still contain older large artifacts until history is rewritten or the project is republished as a fresh public mirror.
-- Large local files should be regenerated, downloaded, or stored externally instead of committed.
+The public repository was initialized from a sanitized snapshot in June 2026. Its fresh public history began with one portfolio commit and does not contain the original private academic commit sequence.
 
-## GitHub-facing Decisions
+The public working tree has been reduced to student-authored work, concise documentation, selected notebook output, small illustrative resources, clearly identified third-party source, and a limited number of archival model/data artifacts. Some student submissions still embed course scaffolding; [`NOTICE.md`](../NOTICE.md) describes that ownership boundary. Runtime logs, R session state, duplicated archives, compiled SAT binaries, large generated InstanceFlow exports, obvious instructor-only copies, and explicitly restricted notebooks were removed during the portfolio pass.
 
-- The semester folders were left in place to preserve academic traceability.
-- The root README now acts as the public portfolio entry point.
-- `docs/showcase.md` provides a curated route through the strongest projects.
-- `docs/course-catalog.md` provides the complete semester and course index.
-- `.gitignore` prevents future caches, local environments, exported reports, model dumps, compressed archives, raw datasets, and compiled binaries from being added accidentally.
-- `.gitattributes` marks common binary, generated, vendored, and data-heavy paths so diffs and GitHub language statistics are cleaner.
+The root `.gitignore` excludes common local configuration, generated output, build products, archives, and model artifacts from normal future additions. It does not remove files that are already tracked and can still be overridden explicitly. The root `.gitattributes` normalizes text files, marks binary formats, and identifies generated or vendored paths for clearer diffs and more representative GitHub language statistics.
 
-## Large Artifacts
+## Portfolio artifact policy
 
-Several large files may still exist in Git history. The new ignore rules prevent similar files from being added again, but they do not rewrite past commits.
+Prefer keeping:
 
-For a lean public mirror, consider this future cleanup path:
+- authored source code and concise project documentation;
+- a small number of polished, executed showcase notebooks;
+- lightweight test fixtures and illustrative images;
+- reproducible environment specifications and build instructions;
+- upstream license and attribution files.
 
-1. Move raw datasets, generated training archives, and model checkpoints to Git LFS, an external release, or documented download links.
-2. Remove build artifacts, caches, compiled binaries, and local IDE settings from history.
-3. Keep notebooks, source code, READMEs, and small illustrative support files in Git.
-4. Re-run a privacy scan before making the repository widely public.
+Prefer publishing elsewhere, with a documented source and checksum:
 
-## Publishing Recommendation
+- raw or easily downloadable datasets;
+- trained models and serialized Python or R objects;
+- long training logs, TensorBoard events, and repeated videos;
+- archives that duplicate extracted files;
+- compiled executables and object files;
+- scratch notebooks and large embedded image output.
 
-Do not publish the old academic history as-is. Earlier commits may still contain removed reports, archives, datasets, model checkpoints, local paths, student identifiers, or collaborator metadata.
+Notebook output should be deliberate. Keep output that materially demonstrates a result, but clear failed executions, repeated plots, debug traces, and output from exploratory copies. A concise result image in project documentation is often easier for a reviewer to evaluate than a multi-megabyte embedded notebook payload.
 
-The safest public release path is to create a fresh Git history from the cleaned working tree:
+## Automated checks
 
-1. Keep the original repository as a private local/archive copy.
-2. Create a new public mirror from the sanitized current tree.
-3. Initialize a fresh Git repository for that mirror.
-4. Make a first public commit such as `Initial public portfolio release`.
-5. Push that clean history to GitHub.
+The `Portfolio quality` GitHub Actions workflow uses only the Python standard library and shell tools available on the runner. It:
 
-If an older version has already been pushed publicly, make that repository private or delete it and publish a new sanitized repository. Rewriting and force-pushing history is useful, but it cannot guarantee removal from forks, local clones, or external caches.
+- runs the repository privacy scan;
+- checks high-confidence secret and private-key formats without printing matched values;
+- validates inline and reference-style local links in tracked Markdown files;
+- parses tracked Python files with the Python AST;
+- validates the JSON structure of every tracked notebook.
 
-## Privacy And Third-party Material
+The workflow does not import project dependencies, execute notebooks, train models, or claim that old coursework remains reproducible on a modern environment.
 
-The cleanup removes known student IDs, collaborator names, course staff contacts, local absolute paths, and exported assignment metadata from the public working tree.
+Every missing local Markdown target fails the link check; there is no repository-wide exception list.
 
-Before sharing the repository broadly, re-run the privacy scan and review high-visibility notebooks for accidental reintroduced metadata.
+## Rights and provenance
 
-## Reproducibility
+The repository combines individual submissions, group work, course scaffolding, data, and third-party code. A notice is not a substitute for redistribution permission. Keep upstream licenses with vendored software, document group contributions, and remove course-provided prompts, templates, or grading utilities unless public redistribution is permitted.
 
-The assignments were completed across multiple courses and environments. There is no single repository-wide environment file because dependencies differ by course and semester. Treat each assignment folder as its own context and check local notebooks, scripts, or course instructions for setup details.
+See [`NOTICE.md`](../NOTICE.md) for the current ownership and reuse boundary.
+
+## Before promoting the portfolio
+
+1. Review external links and group media for consent and continued availability.
+2. Move any remaining large or opaque artifact to a release or its authoritative data source when it no longer adds review value.
+3. Replace archival build notes with portable build instructions before promoting the SAT project.
+4. Re-run all local quality checks and review the GitHub-rendered repository.

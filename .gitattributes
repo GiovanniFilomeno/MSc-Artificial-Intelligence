@@ -1,0 +1,69 @@
+# Normalize source and documentation across platforms.
+* text=auto eol=lf
+*.ipynb text eol=lf
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# Binary formats should not receive text diffs or merges.
+*.7z binary
+*.a binary
+*.avi binary
+*.bmp binary
+*.ckpt binary
+*.dll binary
+*.dylib binary
+*.exe binary
+*.gif binary
+*.gz binary
+*.gguf binary
+*.h5 binary
+*.hdf5 binary
+*.ico binary
+*.jpeg binary
+*.jpg binary
+*.joblib binary
+*.mov binary
+*.mp4 binary
+*.o binary
+*.obj binary
+*.npy binary
+*.npz binary
+*.onnx binary
+*.p binary
+*.pdf binary
+*.pickle binary
+*.pkl binary
+*.png binary
+*.pt binary
+*.pth binary
+*.RData binary
+*.rdata binary
+*.rar binary
+*.safetensors binary
+*.so binary
+*.tar binary
+*.tgz binary
+*.xls binary
+*.xlsx binary
+*.zip binary
+
+# Keep generated data and logs out of GitHub language statistics.
+*.csv linguist-generated=true linguist-detectable=false
+*.json linguist-generated=true linguist-detectable=false
+*.log linguist-generated=true linguist-detectable=false
+*.Rhistory linguist-generated=true linguist-detectable=false
+*.data linguist-generated=true linguist-detectable=false
+*.fa linguist-generated=true linguist-detectable=false
+*.id_musicnn linguist-generated=true linguist-detectable=false
+*.inter linguist-generated=true linguist-detectable=false
+*.inter_test linguist-generated=true linguist-detectable=false
+*.inter_train linguist-generated=true linguist-detectable=false
+*.item linguist-generated=true linguist-detectable=false
+*.user linguist-generated=true linguist-detectable=false
+"**/logdir/**" linguist-generated=true linguist-detectable=false
+"**/run/**" linguist-generated=true linguist-detectable=false
+"Fourth Semester/SAT/Project/test-formulas/**" linguist-generated=true linguist-detectable=false
+
+# These trees are third-party source retained with their upstream licenses.
+"Fourth Semester/SAT/Project/picosat/**" linguist-vendored=true
+"Second Semester/Knowledge Representation/Second Assignment/Ex2 and Ex4/Popper/**" linguist-vendored=true

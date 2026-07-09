@@ -1,15 +1,17 @@
 # SAT Solver Project
 
-This project implements and compares multiple SAT-solving strategies in C++17.
+This coursework project explores multiple SAT-solving strategies in C++17.
 
-| Component | What it does | Skills demonstrated |
-| --- | --- | --- |
-| `main.cpp` | Runs the solver workflow over test formulas. | CLI-style systems workflow, benchmarking setup. |
-| `parser.hpp` | Parses SAT input formulas. | Input parsing, formula representation, defensive validation. |
-| `solver1_recursive.cpp` | Implements a recursive baseline solver. | DPLL-style recursion, backtracking, satisfiability basics. |
-| `solver2_watched.cpp` | Implements watched-literal propagation. | Efficient Boolean constraint propagation, watchlists, solver optimization. |
-| `solver3_cdcl.cpp` | Implements a CDCL-style solver. | Conflict analysis, implication reasoning, clause learning concepts. |
-| `solver4_picosat.cpp` | Integrates PicoSAT. | External solver integration, comparative evaluation, C/C++ interfacing. |
-| `test-formulas/` | Contains benchmark/test formulas. | Validation, regression testing, solver comparison. |
+> **Validation status:** retained as an algorithm and debugging case study, not as featured portfolio evidence. Cross-checking the stored benchmark results against PicoSAT exposed disagreements in the custom recursive and CDCL-style solvers. Until those implementations are repaired and independently rerun, this repository makes no correctness or performance claim for them.
 
-Portfolio takeaway: this is one of the strongest systems projects in the repository because it combines algorithm design, C++ implementation, debugging, and solver benchmarking.
+| Component | Intended role |
+| --- | --- |
+| `main.cpp` | Orchestrates solver runs over the retained test formulas. |
+| `parser.hpp` | Parses DIMACS-style SAT input formulas. |
+| `solver1_recursive.cpp` | Recursive DPLL-style baseline. |
+| `solver2_watched.cpp` | Watched-literal propagation. |
+| `solver3_cdcl.cpp` | CDCL-style conflict analysis and clause learning. |
+| `solver4_picosat.cpp` | PicoSAT integration for reference comparison. |
+| `test-formulas/` | Small formulas used for cross-solver checks and debugging. |
+
+The source is useful for discussing algorithm design, state management, C/C++ integration, and—most importantly—why differential testing matters in solver engineering. Generated binaries and duplicate submission copies were removed from the public edition; the retained result files are archival evidence, not validated benchmarks.

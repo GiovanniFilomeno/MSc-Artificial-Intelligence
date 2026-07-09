@@ -13,7 +13,7 @@
 # Example usage:
 #   python ex1.py input.txt output.txt
 #
-# Author: Giovanni Filomeno [student-id]
+# Author: Giovanni Filomeno
 
 import sys
 import re
